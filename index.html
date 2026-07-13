@@ -1,95 +1,301 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <title>Plataforma Inovação 3D - Rio</title>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-  <style>
-    html, body, #cesiumContainer {
-      width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #000;
-    }
-    #menu {
-      position: absolute; top: 20px; left: 20px; z-index: 1000;
-      background: rgba(26, 54, 93, 0.95); padding: 20px; border-radius: 12px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; 
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 220px;
-    }
-    h3 { margin: 0 0 15px 0; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; }
-    .btn {
-      display: block; width: 100%; padding: 12px; margin-top: 10px;
-      background: #3182ce; color: white; border: none; border-radius: 6px;
-      cursor: pointer; font-weight: bold; text-align: left; transition: all 0.2s;
-    }
-    .btn:hover { background: #2b6cb0; transform: translateX(3px); }
-  </style>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapa da Inovação Carioca</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#b7eaff",
+                    "inverse-primary": "#a9c7ff",
+                    "outline-variant": "#c4c6d0",
+                    "surface-tint": "#405f91",
+                    "on-primary-fixed": "#001b3d",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#713619",
+                    "tertiary-container": "#4f1c02",
+                    "tertiary": "#2f0c00",
+                    "on-surface": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#001f28",
+                    "primary": "#001736",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#00ccf9",
+                    "outline": "#747780",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#005266",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container": "#e5eeff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#264778",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "on-surface-variant": "#43474f",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#7594ca",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "secondary": "#00677f",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#cd805d",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "primary-container": "#002b5b",
+                    "secondary-fixed-dim": "#4cd6ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .perspective-mockup {
+            perspective: 1200px;
+        }
+        .mockup-rotate {
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.6s ease;
+        }
+        .mockup-rotate:hover {
+            transform: rotateY(-5deg) rotateX(2deg);
+        }
+        .node-network {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
 </head>
-<body>
-
-  <div id="menu">
-    <h3>Navegação Ecossistema</h3>
-    <button class="btn" onclick="irParaRioGeral()">🔄 Visão Geral (Rio 3D)</button>
-    <button class="btn" onclick="irParaIndustria()">🏭 Filtro: Indústria</button>
-  </div>
-
-  <div id="cesiumContainer"></div>
-
-  <script>
-    // Substitua pelo seu token do Cesium ion
-    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YTg2MmZlMS1jMWYxLTRhNTQtYWY4NS03MjM2MjAxOWU3MDIiLCJpZCI6NDU0NTgzLCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM2MjEwOTh9.SIFtge-AuaLuXsyAy_ICDHEC4YZJ6N1lrrI6O9AY_Co';
-
-    const viewer = new Cesium.Viewer('cesiumContainer', {
-      terrainProvider: Cesium.createWorldTerrain(),
-      animation: false,
-      timeline: false,
-      sceneModePicker: false,
-      baseLayerPicker: false,
-      geocoder: false,
-      navigationHelpButton: false,
-      infoBox: true // Ativa o balão de informações bonito quando clicar no ponto
-    });
-
-    // ==========================================
-    // 🚀 CARREGA O SEU ARQUIVO KML AQUI
-    // ==========================================
-    // Se o arquivo estiver na mesma pasta do GitHub, basta colocar o nome dele ali.
-    const kmlOpcoes = {
-      camera: viewer.camera,
-      canvas: viewer.scene.canvas
-    };
-    
-    Cesium.KmlDataSource.load('seu-mapa.kml', kmlOpcoes)
-      .then(function(dataSource) {
-        viewer.dataSources.add(dataSource);
-      })
-      .catch(function(error) {
-        console.error("Erro ao carregar o KML: ", error);
-      });
-    // ==========================================
-
-    function irParaRioGeral() {
-      viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(-43.1729, -22.9068, 35000.0),
-        orientation: {
-          heading: Cesium.Math.toRadians(0.0),   
-          pitch: Cesium.Math.toRadians(-45.0),  
-          roll: 0.0
-        }
-      });
-    }
-
-    function irParaIndustria() {
-      viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(-43.2030, -22.8960, 4000.0),
-        orientation: {
-          heading: Cesium.Math.toRadians(35.0),  
-          pitch: Cesium.Math.toRadians(-25.0),  
-          roll: 0.0
-        }
-      });
-    }
-
-    setTimeout(irParaRioGeral, 1000);
-  </script>
-</body>
-</html>
+<body class="font-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="bg-primary dark:bg-primary-container font-label-md text-label-md docked full-width top-0 sticky border-b border-outline-variant/20 shadow-sm z-50 h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md font-bold text-white tracking-tight">
+                Mapa da Inovação Carioca
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-secondary-container border-b-2 border-secondary-container pb-1 transition-colors duration-200" href="#">Início</a>
+<a class="text-white/80 hover:text-secondary-container transition-colors duration-200" href="#">Mapa Interativo</a>
+<a class="text-white/80 hover:text-secondary-container transition-colors duration-200" href="#">Faça Parte</a>
+</nav>
+<div class="flex items-center">
+<button class="bg-secondary-container text-primary font-bold px-6 py-2 rounded-full active:scale-95 transition-transform hover:bg-secondary-fixed">
+                    Entrar
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[calc(100vh-80px)] flex items-center pt-stack-lg pb-stack-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Left Column -->
+<div class="md:col-span-6 space-y-stack-md" data-aos="fade-up">
+<h1 class="font-headline-xl text-headline-xl text-primary max-w-xl md:block hidden">
+                        O ecossistema de ciência, tecnologia e inovação do Rio de Janeiro em um só lugar
+                    </h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:hidden">
+                        O ecossistema de ciência, tecnologia e inovação do Rio de Janeiro em um só lugar
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        O Mapa da Inovação Carioca foi desenvolvido para oferecer uma visão integrada do ecossistema local, facilitando a conexão entre atores, a atração de investimentos, o planejamento público e a divulgação das capacidades tecnológicas da cidade. A plataforma evidencia a densidade e a diversidade de ativos que colocam o Rio entre os principais polos de ciência, tecnologia e inovação do país.
+                    </p>
+<!-- Testimonial Card -->
+<div class="bg-white border-l-4 border-secondary-container p-6 shadow-sm rounded-r-xl mt-stack-lg">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="font-body-md text-on-surface italic leading-relaxed">
+                                “Com o Mapa da Inovação Carioca, damos um passo concreto para conectar nossos centros de pesquisa, universidades, empresas e ambientes de inovação, tornando visíveis oportunidades e talentos que impulsionam o desenvolvimento da cidade. Lançar essa plataforma no Web Summit é apresentar ao mundo a força e a diversidade do ecossistema carioca e afirmar nossa ambição de atrair investimentos e parcerias estratégicas”
+                            </blockquote>
+</div>
+<div class="mt-4 pl-14">
+<p class="font-label-md text-primary font-bold">Gabriel Medina</p>
+<p class="text-caption text-on-surface-variant">Secretário de Ciência, Tecnologia e Inovação</p>
+</div>
+</div>
+<div class="pt-stack-sm flex flex-wrap gap-4">
+<button class="bg-primary text-white font-bold px-8 py-4 rounded-full flex items-center gap-2 hover:bg-primary-container transition-all shadow-md">
+                            Explorar Mapa
+                            <span class="material-symbols-outlined">explore</span>
+</button>
+<button class="border border-primary text-primary font-bold px-8 py-4 rounded-full hover:bg-surface-container transition-all">
+                            Saiba Mais
+                        </button>
+</div>
+</div>
+<!-- Right Column (Mockup) -->
+<div class="md:col-span-6 perspective-mockup relative h-[500px] md:h-[600px] flex items-center justify-center mt-stack-lg md:mt-0">
+<!-- Tech Network Graphics Overlay -->
+<svg class="node-network w-full h-full opacity-60" fill="none" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<circle cx="150" cy="150" fill="#00ccf9" r="4"></circle>
+<circle cx="350" cy="120" fill="#00ccf9" r="6"></circle>
+<circle cx="400" cy="300" fill="#00ccf9" r="3"></circle>
+<circle cx="200" cy="400" fill="#00ccf9" r="5"></circle>
+<circle cx="100" cy="320" fill="#00ccf9" r="4"></circle>
+<path d="M150 150 L350 120 M350 120 L400 300 M400 300 L200 400 M200 400 L100 320 M100 320 L150 150 M150 150 L200 400" stroke="#00ccf9" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<g class="animate-pulse">
+<circle cx="350" cy="120" opacity="0.4" r="12" stroke="#00ccf9" stroke-width="1"></circle>
+<circle cx="200" cy="400" opacity="0.4" r="10" stroke="#00ccf9" stroke-width="1"></circle>
+</g>
+</svg>
+<div class="mockup-rotate bg-white p-4 rounded-2xl shadow-2xl border border-outline-variant/30 overflow-hidden w-full max-w-md relative group">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3]">
+<img alt="Vista aérea do Rio de Janeiro ao entardecer" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiMPgNiK0yIsNIm2Ho8OcdW3xvlukrZMnvUw_oBr-cmcDrbPROA0iVWhHFtRhzEDvE04gqEXCGdcofQcWXzGGRHuNcpEALGirqlrTKclJnWAAbETHBFefiqgnB_JP-xIsvFVCz3GlR8Za_SE8tDPpmNQ_-pzvmFS334AfEqB1LrUIWkyzdNS7nr8ZvGMyZmFpOKAcuI3LRYgumWBXP1MP9OS0fieZKUZFgQeoo1jtxZKfnFChB2R0Grbnl0M9SBOzicus"/>
+<!-- Overlay gradients for tech look -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/20 pointer-events-none"></div>
+</div>
+<div class="mt-4 space-y-2">
+<div class="h-2 w-32 bg-secondary-container/20 rounded-full"></div>
+<div class="h-2 w-full bg-surface-container rounded-full"></div>
+<div class="h-2 w-3/4 bg-surface-container rounded-full"></div>
+</div>
+</div>
+<!-- Floating Data Chips -->
+<div class="absolute top-10 right-0 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-secondary-container/30 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+<div class="bg-secondary-container p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<p class="text-caption font-bold text-primary uppercase tracking-wider">Hubs Tech</p>
+<p class="font-headline-md text-headline-md leading-none">142+</p>
+</div>
+</div>
+<div class="absolute bottom-10 left-0 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-secondary-container/30 flex items-center gap-3 animate-pulse">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">science</span>
+</div>
+<div>
+<p class="text-caption font-bold text-primary uppercase tracking-wider">Pesquisadores</p>
+<p class="font-headline-md text-headline-md leading-none">8.5k</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Optional for better flow) -->
+<section class="bg-surface-container py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="space-y-2">
+<h3 class="font-headline-lg text-headline-lg text-primary">2.5k+</h3>
+<p class="font-label-md text-on-surface-variant">Startups</p>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-lg text-headline-lg text-primary">45</h3>
+<p class="font-label-md text-on-surface-variant">Unicorns</p>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-lg text-headline-lg text-primary">12</h3>
+<p class="font-label-md text-on-surface-variant">Parques Tec.</p>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-lg text-headline-lg text-primary">R$ 4.2B</h3>
+<p class="font-label-md text-on-surface-variant">Investimento</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface border-t border-outline-variant py-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-md text-headline-md text-primary dark:text-inverse-primary">
+                    Mapa da Inovação Carioca
+                </div>
+<p class="font-caption text-caption text-on-surface-variant">
+                    © 2024 Mapa da Inovação Carioca. Prefeitura do Rio de Janeiro.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-md font-caption text-caption">
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-100 hover:opacity-80" href="#">Privacidade</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-100 hover:opacity-80" href="#">Termos de Uso</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-100 hover:opacity-80" href="#">Contato</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-100 hover:opacity-80" href="#">Sobre</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">language</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for the network nodes
+        document.addEventListener('mousemove', (e) => {
+            const svg = document.querySelector('.node-network');
+            if (svg) {
+                const moveX = (e.clientX - window.innerWidth / 2) / 50;
+                const moveY = (e.clientY - window.innerHeight / 2) / 50;
+                svg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
+</body></html>
