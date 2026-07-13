@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>MIC</name>
+    <description/>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-7CB342-nodesc-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-7CB342-nodesc-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-7CB342-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-7CB342-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-7CB342-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-880E4F-nodesc-normal">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-880E4F-nodesc-highlight">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-880E4F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-880E4F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-880E4F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-9C27B0-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-9C27B0-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-9C27B0">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-9C27B0-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-9C27B0-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-9C27B0-nodesc-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-9C27B0-nodesc-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-9C27B0-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-9C27B0-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-9C27B0-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-F9A825-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-F9A825-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-F9A825">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-F9A825-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-F9A825-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-F9A825-nodesc-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-F9A825-nodesc-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-F9A825-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-F9A825-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-F9A825-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-FF5252-normal">
+      <IconStyle>
+        <color>ff5252ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-FF5252-highlight">
+      <IconStyle>
+        <color>ff5252ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-FF5252">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-FF5252-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-FF5252-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-FF5252-nodesc-normal">
+      <IconStyle>
+        <color>ff5252ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-FF5252-nodesc-highlight">
+      <IconStyle>
+        <color>ff5252ff</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-FF5252-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-FF5252-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-FF5252-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>INDUSTRIA</name>
+      <Placemark>
+        <name>Parque Tecnológico da UFRJ</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2188511,-22.8649891,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Distrito Industrial de Santa Cruz</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.737474,-22.8866946,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Teleporto - Centro Empresarial Cidade Nova </name>
+        <description>Edifício inteligente que concentra mais de 200 ISPs, atuando como o maior hub de interconexão física do Centro do Rio.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2044049,-22.9100554,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Refinaria Duque de Caxias (REDUC)</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2848666,-22.7150609,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bio-Manguinhos</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2417154,-22.8804996,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Complexo Industrial de Biotecnologia em Saúde (CIBS)</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.7248788,-22.8730498,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CENPES/PETROBRAS</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2322695,-22.8537617,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>C.N.I. - Complexo Naval de Itaguaí</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.8477639,-22.9297063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vibra Energia - Edifício Lubrax</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.201253,-22.9108275,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cepel - AXIA ENERGIA</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2354836,-22.8523654,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>PRIO</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1829266,-22.9470077,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ocyan</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2042079,-22.8989284,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[L'ORÉAL Centro de Pesquisa e Inovação]]></name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2166974,-22.860379,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porto da Confiança</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.7336336,-22.8831093,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SESI / SENAI</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.6801556,-22.9212022,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Firjan SENAI SESI Maracanã</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2324363,-22.9155443,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SESI Cidadania</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4248953,-22.8677654,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SESI / SENAI Vicente de Carvalho</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3191749,-22.8516601,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ternium Brasil</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.7197709,-22.9027487,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Foresea</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2039761,-22.8988605,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>OceanPact Tech</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2149563,-22.8663493,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>INFRAESTRUTURA</name>
+      <Placemark>
+        <name>PoP-RJ/RNP</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1744282,-22.9542118,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SOLÁRIO CARIOCA</name>
+        <description><![CDATA[<a href="https://www.youtube.com/watch?v=NjtjtdbpvW4"><img src="https://img.youtube.com/vi/NjtjtdbpvW4/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/NjtjtdbpvW4">https://www.youtube.com/embed/NjtjtdbpvW4</a><br><br>O Solário Carioca é a primeira usina solar fotovoltaica pública da cidade do Rio de Janeiro, inaugurada em Santa Cruz com um terreno de 200 mil metros quadrados, antigo aterro sanitário. Com mais de 9.240 painéis, gera 5 megawatts (MW) de energia limpa. A produção de energia própria vai permitir um abatimento de R$ 2 milhões por ano nas contas da prefeitura com a Light. Essa nova geração é suficiente para abastecer, por exemplo, 15 UPAs ou 45 escolas públicas da cidade.]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://www.youtube.com/embed/NjtjtdbpvW4</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -43.7089371,-22.8737222,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aeroporto Internacional do Rio de Janeiro - Galeão – Antonio Carlos Jobim</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2566277,-22.8052698,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ascenty Rio de Janeiro 2</name>
+        <description>Data center de última geração interconectado à malha de fibra própria com 12 MW de potência disponível. Infraestrutura de 3 MW energia total, 3.5 MIL M² área total,1.300 racks</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3482642,-22.8048673,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aeroporto Santos Dumont</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1638162,-22.9097959,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ascenty Rio de Janeiro 1</name>
+        <description>Unidade de alta densidade com 10 MW de potência total e 7 MIL M² de área construída para colocation escalável e 880 racks</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3479837,-22.8069333,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Museu de Astronomia e Ciências Afins</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2232974,-22.8954814,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porto Sudeste do Brasil S.A</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwuV_VAJrSqs6sRzUUngocLADhR8mQm8qyms771YZIUDADrPEq45iLwbGMLP7kN5jvk1YWWyzd-CRNYmaO90tqf0Nrq5TJ4WVsMMd4OS3D66PNgnIUP8YzTNdrUcR2HsuOiN6MDyEmpozEEF4WfL7e_zEle8NNrlEGvDgDQyOfhl2XkWcMt-mdVD2Gsz9y7h3WPFs6WxeGkyjPx9gijLN5mHl7qx5Rygem6wYTXLfrMzdsVQhgL3zYFhYQ?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Maior porto de minério de ferro do mundo — operado pela Vale com capacidade de 100 M ton/ano e terminais graneleiros de última geração. Hub logístico global que conecta o interior do país ao mercado internacional via Baía de Sepetiba.]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwuV_VAJrSqs6sRzUUngocLADhR8mQm8qyms771YZIUDADrPEq45iLwbGMLP7kN5jvk1YWWyzd-CRNYmaO90tqf0Nrq5TJ4WVsMMd4OS3D66PNgnIUP8YzTNdrUcR2HsuOiN6MDyEmpozEEF4WfL7e_zEle8NNrlEGvDgDQyOfhl2XkWcMt-mdVD2Gsz9y7h3WPFs6WxeGkyjPx9gijLN5mHl7qx5Rygem6wYTXLfrMzdsVQhgL3zYFhYQ?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -43.8323285,-22.9143185,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>PORTO RIO DE JANEIRO</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GyRC0dYKl8jTA4kcFXC5c5x_a5mGt5I_3CA5no5j8wKg4mpf_2pDAOslYBt2up_bLT4X-StYlCTisWM69FyrJGYUqSxe6PvwINTM-bHqzgdSXJGMMusw1iUOjvy1Wq3Y5ofKUzRzdHbeXPrnBaWzbRAER3i3qbR-45avGgKZG34wDNrSfc3riLGgeaTmMQJSsNTnd1RMF6gf6k_FvdpL-3JyMYlf6bzbXrGyRNEu39LyY4Ts1uWTf8U1Zc?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Porto principal da cidade em modernização acelerada. Gateway de importação e exportação para o Centro-Sul, com foco em cargas especiais, terminais de contêineres e economia circular portuária. Integrado ao projeto Porto Maravilha de revitalização urbana e digital.]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GyRC0dYKl8jTA4kcFXC5c5x_a5mGt5I_3CA5no5j8wKg4mpf_2pDAOslYBt2up_bLT4X-StYlCTisWM69FyrJGYUqSxe6PvwINTM-bHqzgdSXJGMMusw1iUOjvy1Wq3Y5ofKUzRzdHbeXPrnBaWzbRAER3i3qbR-45avGgKZG34wDNrSfc3riLGgeaTmMQJSsNTnd1RMF6gf6k_FvdpL-3JyMYlf6bzbXrGyRNEu39LyY4Ts1uWTf8U1Zc?authuser=0&fife=s16383]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -43.213908,-22.8931142,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Supercomputador Harpia</name>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw3mHlAIePMf1cSQIKCJ6XZ9ZlklnkoYMMwTR3sjmD02yC_YMhe5VnAkaFc_26ylRZaS7uC6c84z_VWLNbq00v-QPxbH0RxZpBDFYGIQzALmaUaxATvGtsEvCZVqMFXjxDrscOG6RJl_YaApoAQhvhaOK-YD3kDY7E6QyawPiK0hluQ_4xQcZ3myNLXd_Vw7jSYYZQMnsrR_bP0Pt9dD0fJb_uPCMQwErSaVjXlPxJWLVhFldzHVHGzi7k?authuser=0&fife=s16383" height="200" width="auto" /><br><br>A Harpia, da Petrobras, é o 36º computador de maior desempenho do mundo inteiro. O equipamento tem capacidade de 146 Pflops — ou seja, realiza 146 quatrilhões de operações por segundo.A máquina, equivalente a 10 milhões de celulares ou 200 mil notebooks, contribuirá para que a companhia mantenha a liderança em capacidade de processamento na América Latina. O novo HPC, High Perfomance Computer, é utilizado pelos geofísicos da Petrobras para processar dados sísmicos brutos e transformá-los em imagens detalhadas do subsolo. <br><br><a href="https://www.youtube.com/watch?v=byVELQgjd3o"><img src="https://img.youtube.com/vi/byVELQgjd3o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/byVELQgjd3o">https://www.youtube.com/embed/byVELQgjd3o</a>]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw3mHlAIePMf1cSQIKCJ6XZ9ZlklnkoYMMwTR3sjmD02yC_YMhe5VnAkaFc_26ylRZaS7uC6c84z_VWLNbq00v-QPxbH0RxZpBDFYGIQzALmaUaxATvGtsEvCZVqMFXjxDrscOG6RJl_YaApoAQhvhaOK-YD3kDY7E6QyawPiK0hluQ_4xQcZ3myNLXd_Vw7jSYYZQMnsrR_bP0Pt9dD0fJb_uPCMQwErSaVjXlPxJWLVhFldzHVHGzi7k?authuser=0&fife=s16383 https://www.youtube.com/embed/byVELQgjd3o]]></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -43.2322695,-22.8537617,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Supercomputador Santos Dumont</name>
+        <description><![CDATA["O supercomputador Santos Dumont (SDumont) está localizado na sede do Laboratório Nacional de Computação Científica (LNCC), em Petrópolis-RJ, atuando como nó central (Tier-0) do Sistema Nacional de Processamento de Alto Desempenho - SINAPAD.<br>O SDumont possui capacidade instalada de processamento na ordem de 20 Petaflop/s (20 x 1015 float-point operations per second), apresentando uma configuração híbrida de nós computacionais, no que se refere à arquitetura de processamento paralelo disponível.Finalidade: Atender à comunidade científica nacional em áreas como bioinformática, modelagem climática, engenharia, física e inteligência artificial.Acesso: Disponível para projetos de pesquisa aprovados, sendo um pilar do Sistema Nacional de Processamento de Alto Desempenho (SINAPAD).]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2178341,-22.5297396,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Datalake Municipal</name>
+        <description><![CDATA["O Datalake Municipal é um repositório centralizado de dados em escala massiva, capaz de armazenar dados estruturados e não estruturados de toda a máquina pública em um único lugar. A integração de Escala Real. Dados de transporte, saúde, educação e segurança climática são integrados em tempo real.<br>Capacidade de Processamento: Ele permite o processamento de Big Data para rodar algoritmos de Inteligência Artificial. Por exemplo, é através dele que o COR consegue prever impactos de chuvas fortes ou otimizar o fluxo de trânsito.]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.203434,-22.9121756,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Takoda Data Centers - RJ01</name>
+        <description>O Takoda RJ01, situado em Vargem Pequena, é uma infraestrutura crítica de Colocation que atende às demandas de alta densidade da capital. Sua localização na Zona Oeste é estratégica: está fora do eixo central de congestionamento, mas conectada via fibra ótica redundante aos principais backbones da cidade. É um data center Tier III, o que significa que possui caminhos redundantes de energia e refrigeração, garantindo que os dados das empresas nunca fiquem offline.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4313133,-22.983145,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SCALA DC RIO</name>
+        <description>A Scala é focada em clientes de Hyperscale (gigantes de tecnologia que precisam de blocos massivos de energia e espaço). Eles possuem uma presença robusta na cidade, projetada com foco total em ESG e eficiência energética. Seus data centers são preparados para a próxima onda de Inteligência Artificial, oferecendo refrigeração avançada e alta densidade de potência por rack.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3565966,-22.7980819,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cirion RIO1</name>
+        <description><![CDATA[Premier Elite data center de conectividade internacional, hospedando pontos de troca de tráfego submarino (Globenet/IX) 483 de FP IT Capacity <br>7,097 M² Area Total e 100% Energia Renovavel]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2179279,-22.9049624,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cirion RIO2</name>
+        <description><![CDATA["Projetado para hyperscalers, provedores de serviços e empresas, oferece o desempenho, a escala e a confiabilidade necessários para impulsionar a expansão em nuvem, as implementações de IA e as cargas de trabalho críticas em toda a América Latina. <br>15,055 M² Floor Area<br>6,683<br>80 MW"]]></description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2179086,-22.9052569,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Equinix Data Center RJ2</name>
+        <description>Instalação de larga escala (Tier III) projetada para nuvem híbrida e colocation de alta densidade com redundância total.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.273228,-22.8713852,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Equinix RJ1</name>
+        <description>Hub de interconexão com os principais provedores de nuvem e operadoras globais, em área central estratégica.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1945586,-22.9548748,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>R4C Internet e Datacenter no Downtown - RJ</name>
+        <description>Data Center Tier II certificado para aplicações críticas.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3172348,-23.0036474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Telxius -  Cable Landing Station </name>
+        <description>Estação de pouso de cabos submarinos da Telxius (Telefónica), operando o cabo de altíssima capacidade BRUSA (Brasil-EUA) e o cabo AMX-1 (América Móvil).</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2043208,-22.9098757,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>RJO1 - Elea Data Centers</name>
+        <description>Localizado no Parque Olímpico, é focado em processamento para IA e Cloud com foco em sustentabilidade e baixa latência.</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3802504,-22.968451,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Hub de Ativação</name>
+      <Placemark>
+        <name>Casa Firjan</name>
+        <styleUrl>#icon-1899-FF5252-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1890635,-22.9501378,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porto Maravalley</name>
+        <description><![CDATA["O Maravalley consolidou-se como um dos principais polos de inovação e tecnologia do Rio de Janeiro, conectando startups, grandes empresas, universidades, investidores e iniciativas públicas em um ecossistema voltado ao desenvolvimento econômico da cidade. Com mais de 100 empresas residentes e uma rede superior a 300 empresas conectadas, o hub fortalece a integração entre educação, empreendedorismo, pesquisa aplicada e mercado.<br>O ambiente reúne iniciativas estratégicas como o IMPA Tech, programas de aceleração, hackathons de inteligência artificial e energia, além de ações voltadas à formação de talentos, inovação aberta e atração de investimentos. As empresas residentes já ultrapassam R$ 250 milhões em faturamento, enquanto o ecossistema acumula mais de R$ 1 bilhão em captações, demonstrando a capacidade do Maravalley de impulsionar negócios de base tecnológica e ampliar a competitividade do Rio de Janeiro no cenário nacional e internacional.<br>Com atuação crescente em áreas como IA, Web3, data centers, saúde pública, indústria e economia criativa, o Maravalley também fortalece conexões globais por meio de missões internacionais e participação em eventos como o Web Summit Lisboa e o Rio Innovation Week. O próximo ciclo do hub prevê expansão de infraestrutura, criação de clube de investidores, novas plataformas de dados e programas voltados à retenção de startups, escalabilidade de negócios e consolidação de uma cultura contínua de inovação."]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.20339,-22.8977454,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arca Hub</name>
+        <description>O Arca Hub é um ecossistema de inovação e empreendedorismo localizado em Ipanema, no Rio de Janeiro, criado para conectar startups, grandes empresas, investidores, universidades, especialistas e setor público em um ambiente colaborativo voltado à geração de negócios, inovação aberta e desenvolvimento tecnológico. Considerado um dos principais hubs de inovação da cidade, o espaço foi fundado em 2023 e atua promovendo networking, aceleração de startups, mentorias, hackathons, eventos estratégicos e programas voltados a investimento e transformação digital. O hub reúne empresas, comunidades e iniciativas ligadas a áreas como inteligência artificial, venture capital, govtechs, marketing, deep techs e inovação corporativa, além de ser apoiado pela Sai do Papel, organização responsável pelo Rio Innovation Week. Entre seus destaques, o Arca Hub já recebeu mais de 50 empresas e cerca de 2 mil pessoas nos primeiros meses de operação, possui forte atuação em conexão com investidores e ecossistemas internacionais e abriga iniciativas como o Deep Tech Lab, voltado à infraestrutura científica e escalabilidade de startups de base tecnológica.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1893309,-22.9856074,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rio IA City</name>
+        <description><![CDATA["A Rio AI City nasce como referência em inteligência artificial, computação em nuvem e sustentabilidade. Mais do que infraestrutura, representa um novo eixo econômico e cultural para o Rio de Janeiro, em sinergia com sua agenda de transformação urbana.Uma das principais características do projeto é o compromisso com a sustentabilidade. Os data centers operarão exclusivamente com energia 100% limpa e renovável, utilizando sistemas de resfriamento que dispensam o uso de água.<br>A expectativa é que o Rio AI City gere mais de 10 mil empregos qualificados e impulsione a atração de startups e empresas globais de tecnologia.<br>A Elea Data Centers já tem o data center RJO1 em funcionamento e prevê a entrega do RJO2, com 80 MW, em 2026. As unidades RJO3 e RJO4 adicionarão cerca de 120 MW, consolidando a meta de 1,5 GW na primeira fase."]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3810431,-22.9677557,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto 12</name>
+        <description>O Instituto 12 é um ecossistema privado de inovação, impacto, tecnologia e conexões estratégicas sediado no Leblon, no Rio de Janeiro, criado para reunir lideranças empresariais, investidores, empreendedores, criadores e organizações comprometidas com o desenvolvimento econômico, social e sustentável do Brasil. O espaço atua como um hub multifuncional para eventos, networking, debates estratégicos, inovação aberta e articulação entre setores como tecnologia, energia, finanças, cultura, ESG e empreendedorismo. Entre seus principais destaques, o Instituto 12 conta com aproximadamente 1.600 m² de infraestrutura colaborativa, reúne empresas residentes como Valor Capital, Atlântico VC, Hashdex, Parfin, Zoox e Kelvin Lab, além de possuir apoio institucional e corporativo de organizações como TIM, PRIO, Grupo Trigo, Visagio e Invest.Rio. O ecossistema também promove conexões internacionais e debates de alto nível com lideranças globais da inovação, incluindo nomes como Evan Williams, além de atuar em pautas ligadas à transição energética, inteligência artificial, sustentabilidade, investimentos e futuro das cidades.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2264945,-22.9850962,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Imagine</name>
+        <description>Liderado pela empresa Rock World (idealizadora do Rock in Rio) e oficializado pela Lei Complementar nº 284/2025, o Projeto Imagine surge como uma das mais ambiciosas iniciativas de economia criativa do Brasil, visando transformar 1,18 milhão de m² do Parque Olímpico, na Barra da Tijuca, no maior complexo de entretenimento e lazer da América Latina. Estruturado por meio de uma Operação Urbana Consorciada com concessão de 30 anos, o empreendimento prevê investimentos de até R$ 7,9 bilhões para abrigar uma infraestrutura robusta que inclui um parque temático permanente, anfiteatro para 40 mil pessoas, resort, museu olímpico, hub criativo com pista de patinação, arenas multiuso e a sede fixa do Rock in Rio. Em contrapartida à revitalização e manutenção da área, o plano autoriza a transferência de mais de 1 milhão de m² em potencial construtivo para as regiões da Barra e Jacarepaguá, focando também em metas de sustentabilidade e mobilidade urbana. Com uma projeção de impacto econômico superior a R$ 240 bilhões em três décadas e a geração de aproximadamente 143 mil empregos, o projeto consolida o Rio de Janeiro como um hub global de inovação, movimentando anualmente mais de R$ 9 bilhões e integrando cultura, esportes e turismo em um ecossistema de experiências imersivas sem precedentes.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3934892,-22.9744781,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Associação Comercial do Rio de Janeiro</name>
+        <description><![CDATA[A Associação Comercial do Rio de Janeiro (ACRJ), reconhecida como a "Casa de Mauá", atua como um vigoroso Hub de Ativação e governança que impulsiona a inovação no setor produtivo fluminense por meio de seus 23 Conselhos Empresariais, com destaque para o de Inovação, Tecnologia e Transformação Digital. Integrando a tradição de mais de dois séculos à modernidade, a entidade fomenta o ecossistema empreendedor ao articular parcerias estratégicas, oferecer suporte em processos de Propriedade Intelectual e facilitar o acesso a novas tecnologias e créditos para modernização. Por meio de iniciativas como o Fórum Rio Empreendedor e a curadoria de conteúdos de vanguarda, a ACRJ desempenha um papel fundamental na defesa de políticas públicas que desoneram a inovação, servindo como o elo institucional que conecta empresas tradicionais, startups e o governo para acelerar o desenvolvimento econômico sustentável do estado.]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1770738,-22.9017845,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Riocentro</name>
+        <description>O Riocentro, com seus 500 mil m² de área total e pavilhões climatizados que comportam de grandes congressos a feiras de varejo, encerrou o ano com 87 eventos realizados. O grande destaque econômico foi a Bienal do Livro Rio 2025, que sozinha atraiu mais de 740 mil pessoas e gerou um impacto de R$ 1,18 bilhão para a economia carioca. Além disso, o centro de convenções iniciou um ciclo de congressos internacionais que deve injetar cerca de US$ 79 milhões na cidade até 2027, reforçando o papel do Rio como hub global de tecnologia e saúde, sediando eventos como o Web Summit Rio e o Congresso Internacional de Ortodontia.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4102893,-22.9765762,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Web Summit Rio</name>
+        <description><![CDATA[O Web Summit Rio consolida-se como o Hub de Ativação de ecossistema "ao pé da letra", funcionando como o motor intelectual que conecta o Brasil aos principais centros de inovação globais ao materializar a convergência entre capital, talento e tecnologia de ponta. Realizado no Riocentro, o evento transforma o Rio de Janeiro no epicentro da economia digital, reunindo mais de 34.000 participantes de 100 países, 1.000 startups e 500 investidores para ativar transações de Venture Capital e parcerias estratégicas em tempo real. Esta dinâmica acelera o desenvolvimento de setores disruptivos, como a Inteligência Artificial e a Neoindustrialização, gerando um impacto econômico estimado em R$ 1,2 bilhão para a cidade e projetando a marca do Rio para mais de 150 países como o principal polo tecnológico da América Latina.]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4099561,-22.9802363,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>ASSESPRO RJ</name>
+        <description>A Assespro-RJ consolida-se como o principal Hub de Governança e Articulação do setor de tecnologia fluminense, atuando como o motor institucional que integra empresas de TI e software ao ecossistema global de inovação. Focada em elevar a competitividade digital do Rio de Janeiro, a associação fomenta o desenvolvimento de soluções disruptivas ao facilitar o acesso de seus associados a marcos regulatórios estratégicos, como a regulação da Inteligência Artificial, e ao promover o intercâmbio entre universidades, governo e mercado. Através de sua forte atuação em representatividade política e suporte à internacionalização, a Assespro-RJ ativa a economia do conhecimento, transformando o setor de tecnologia em uma camada transversal de inovação que impulsiona a neoindustrialização e a eficiência operacional de toda a cadeia produtiva nacional.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1773555,-22.9014506,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jockey Club Brasileiro</name>
+        <description>o Jockey Club Brasileiro, na Gávea, é um destino obrigatório que transcende as tradicionais corridas de cavalos. Com sua arquitetura clássica dos anos 20, o espaço oferece uma das vistas mais privilegiadas do Rio de Janeiro, emoldurada pelo Cristo Redentor e pela Lagoa Rodrigo de Freitas. Além do charme do turfe, o complexo consolidou-se como o palco do Rio Open, o maior torneio de tênis da América do Sul. Em sua edição de 2025, o evento recebeu cerca de 69 mil pessoas, das quais 40% eram turistas de outros estados e países, transformando o Jockey em um hub esportivo global. Do ponto de vista financeiro, o Rio Open 2025 foi um motor econômico robusto para a cidade, movimentando aproximadamente R$ 200 milhões e distribuindo uma premiação milionária de US$ 2,39 milhões (cerca de R$ 13,8 milhões), reafirmando o Jockey como um símbolo de prestígio que une esporte de elite, alta gastronomia e um impacto profundo no turismo carioca.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2247015,-22.9735236,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sambódromo Marquês de Sapucaí</name>
+        <description>Sambódromo da Marquês de Sapucaí representa a escala monumental e a precisão técnica que fazem do Rio a capital mundial da festa. Oficialmente chamado de Passarela Professor Darcy Ribeiro, o projeto de Oscar Niemeyer possui 700 metros de extensão e uma capacidade impressionante para 75 mil espectadores por noite, distribuídos entre arquibancadas e luxuosos camarotes. Em 2025, o Carnaval do Rio atingiu marcas históricas, movimentando cerca de R$ 5 bilhões apenas na capital fluminense (dentro de um total de R$ 6,5 bilhões no estado), com uma ocupação hoteleira que beirou os 98,6%. O fluxo de pessoas é gigantesco: a cidade recebeu mais de 8 milhões de foliões durante o período, e o Sambódromo funciona como o epicentro desse investimento, gerando milhares de empregos e consolidando uma estrutura acústica e logística única no mundo. Seja nos ensaios técnicos gratuitos ou nos desfiles oficiais, a Sapucaí é uma máquina de cultura e economia que define a identidade turística do Brasil.</description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.196804,-22.9114522,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vivo Rio</name>
+        <description><![CDATA[" Inaugurado em 2006, o Vivo Rio é considerado uma das principais casas de espetáculos da cidade do Rio de Janeiro. Localizado no Aterro do Flamengo, no complexo do MAM, seu projeto foi concebido no início dos anos 50 pelo renomado arquiteto Affonso Eduardo Reidy, considerado uma das joias da arquitetura moderna.<br>Integrado ao Museu de Arte Moderna, o Vivo Rio revela as principais características da arquitetura de Reidy: o primor na ocupação do espaço, a perfeita inserção no entorno, as cores e texturas cruas dos materiais, o aproveitamento dos recursos naturais e, sobretudo, a arquitetura em função das pessoas."]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1713757,-22.9133842,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Estádio Olímpico Nilton Santos</name>
+        <description><![CDATA[O Estádio Nilton Santos, o "Engenhão", consolidou-se como o grande hub de entretenimento de alta performance e o principal palco para megaeventos de escala global no Rio de Janeiro. Com a concessão ao Botafogo e a instalação do gramado sintético de última geração, o estádio resolveu um dos maiores gargalos da cidade: a transição rápida entre eventos esportivos e shows. Isso permite que o local receba ativações de marcas globais e espetáculos de massa sem comprometer a performance atlética, atraindo nomes como Taylor Swift, Coldplay e The Weeknd, que buscam infraestrutura moderna para suportar transmissões em 4K e experiências imersivas. O Estádio Nilton Santos expande sua influência para além das arquibancadas ao abrigar uma das unidades da Nave do Conhecimento, com cursos de robótica, programação, design gráfico e produção de vídeo, consolidando-se como um verdadeiro hub que une esporte, entretenimento e inclusão digital. Essa ocupação estratégica transforma o complexo em um centro de ativação tecnológica para a Zona Norte, onde a inovação deixa de ser algo distante para se tornar acessível à comunidade e aos visitantes.]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2923128,-22.8932749,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Maracanã</name>
+        <description><![CDATA["Estádio Jornalista Mário Filho, mais conhecido como Maracanã, o popular Maraca (“semelhante a um chocalho” em tupi-guarani, devido ao som de pássaros que viviam por ali), é um estádio de futebol localizado na Avenida Presidente Castelo Branco, no Rio de Janeiro e inaugurado em 1950, durante o mandato do então General de Divisão e Prefeito do Distrito Federal do Rio, Marechal Ângelo Mendes de Moraes, tendo sido utilizado na Copa do Mundo de Futebol daquele ano. Após diversas obras de modernização, a capacidade do estádio é de 78 838 espectadores, sendo o maior estádio do Brasil.<br>Desde então, o Estádio do Maracanã foi palco de grandes momentos do futebol brasileiro e mundial, como o milésimo gol de Pelé, finais do Campeonato Brasileiro, Carioca de Futebol, Taça Libertadores da América e do primeiro Campeonato Mundial de Clubes da FIFA, além de competições internacionais e partidas da Seleção Brasileira. O Estádio do Maracanã em 2026 consolidou sua transição de um templo do futebol para um ecossistema de entretenimento multifuncional, funcionando como o principal hub de ativação de grandes eventos e experiências de marca no Rio de Janeiro. Sob a gestão do Consórcio Fla-Flu, o complexo passou por uma profissionalização estratégica da sua agenda de entretenimento, estabelecendo parcerias de exclusividade (como o acordo com a produtora 30e) para garantir que o estádio receba não apenas jogos, mas as maiores turnês internacionais e festivais do mundo de forma otimizada. "]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2265474,-22.9123598,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Viaduto de Madureira</name>
+        <styleUrl>#icon-1899-FF5252-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3347941,-22.8760241,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Farmasi Arena</name>
+        <description><![CDATA[A Farmasi Arena, apresenta uma versatilidade técnica que permite transitar entre eventos esportivos e grandes turnês musicais. Com capacidade para até 18 mil pessoas, a arena registrou um crescimento de público de 56% no primeiro semestre de 2025, impulsionada por shows internacionais de artistas como Sting, Christina Aguilera e Twenty One Pilots, além da aguardada edição do UFC. A movimentação financeira da arena é potencializada pelo turismo de entretenimento: em 2025, eventos como a turnê de despedida de Gilberto Gil e as apresentações de Bethânia & Caetano garantiram ocupação máxima. Juntos, Riocentro e Farmasi Arena não apenas movimentam bilhões de reais, mas sustentam a infraestrutura hoteleira da Barra da Tijuca — exemplificada pelo Lagune Barra Hotel, que opera dentro do complexo e registrou picos de 100% de ocupação durante os principais eventos do ano.]]></description>
+        <styleUrl>#icon-1899-FF5252</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3905005,-22.9754614,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Acadêmico</name>
+      <Placemark>
+        <name>Universidade Federal do Rio de Janeiro</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2151914,-22.8674532,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UFRJ - Campus Duque de Caxias Professor Geraldo Cidade</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2861034,-22.6331522,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UFRJ - Campus Praia Vermelha</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1744735,-22.9523386,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Universidade Federal Fluminense - Campus Praia Vermelha</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1316667,-22.9048625,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UNIRIO - Universidade Federal do Estado do Rio de Janeiro</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1732069,-22.9529175,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Universidade Federal Rural do Rio de Janeiro (UFRRJ)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.6887445,-22.7722406,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UFRRJ</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4593492,-22.7424672,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto Federal de Educação, Ciência e Tecnologia do Rio de Janeiro</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2202882,-22.9106268,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro Federal de Educação Tecnológica Celso Suckow da Fonseca</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2247731,-22.9124772,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>NIT-Rio</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1743458,-22.9541001,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro Brasileiro de Pesquisas Físicas</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1736128,-22.9543216,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto de Matemática Pura e Aplicada</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2377908,-22.9655003,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IMPA Tech</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2034086,-22.8977507,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto Nacional de Tecnologia</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.184341,-22.8964389,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Observatório Nacional</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2242838,-22.8960296,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.233402,-22.9797463,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto SENAI de Tecnologia Automação e Simulação</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2411715,-22.8966788,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Faculdade SENAI Rio</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2210602,-22.9149958,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IEL RJ - A Escola de Negócios da Indústria</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1740632,-22.9104628,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>INPO - Instituto Nacional de Pesquisas Oceânicas</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2183056,-22.8651246,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>COPPE - UFRJ</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2300443,-22.8608209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fiocruz</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2439622,-22.877628,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>FGV Arte</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1802727,-22.94132,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto Militar de Engenharia</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.166214,-22.9559645,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Senac Botafogo</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1855322,-22.9471932,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Senac Niterói</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1230244,-22.8969862,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro de Tecnologia Mineral (CETEM)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.22153,-22.860258,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Laboratório Nacional de Computação Científica</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2173804,-22.5295417,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>ESPM - Villa Aymoré</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1761755,-22.9218063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ibmec - Botafogo</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1884499,-22.9501754,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IBICT - Instituto Brasileiro de Informação em Ciência e Tecnologia</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1743868,-22.9541474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>FIAP - Rio de Janeiro</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.182562,-22.9441605,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UNISUAM</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2535111,-22.8671521,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UniCarioca</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.284612,-22.9014853,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UniCarioca</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2097965,-22.926352,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Governamental</name>
+      <Placemark>
+        <name>SMCT - Secretaria Municipal de Ciência, Tecnologia e Inovação</name>
+        <description><![CDATA["A Secretaria Municipal de Ciência, Tecnologia e Inovação (SMCT) é o órgão responsável por promover políticas públicas de fomento, estímulo, capacitação da utilização dos métodos, técnicas e ferramentas tecnológicas, além da aplicação prática do conhecimento científico.<br>Promovendo o fortalecimento científico e tecnológico no Município do Rio de Janeiro, através de políticas públicas de apoio à democratização do acesso ao universo digital, impulsionando o desenvolvimento e o crescimento econômico do Município. As Naves do Conhecimento têm como objetivo democratizar o acesso à tecnologia e promover a inclusão digital. Além de oficinas e cursos nas áreas de informática básica, economia criativa, tecnologias da informação, robótica e programação, elas também são palco de eventos e contam com estúdios de audiovisual e área de coworking (escritório compartilhado).<br>Em 2023, as Naves do Conhecimento ganharam duas novas modalidades: as Naves Satélites e Navezinhas Cariocas. De 9 unidades, o programa passou para 32 — em sua maioria nas Zonas Norte e Oeste. E, em 2025, foram 200 mil vagas abertas em cursos de Inteligência Artificial, Análise de Dados com Power BI, Programação em Python, informática básica, entre outros."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.205652,-22.9112234,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro de Operações Rio (COR)</name>
+        <description><![CDATA["O Centro de Operações e Resiliência (COR-Rio) é o principal centro de inteligência urbana da América Latina. A estrutura reúne cerca de 500 profissionais de mais de 50 órgãos e concessionárias de serviços públicos que atuam 24 horas para monitorar, integrar ações de planejamento e de pronta resposta a impactos de ocorrências como chuvas intensas, deslizamentos, acidentes e eventos de grande porte. O COR-Rio também opera com um moderno data center e sensores, permitindo o monitoramento em tempo real da cidade, contando com cerca de 5.000 câmeras, controle semafórico até sensores georreferenciados. o COR é o protagonista em Previsão Climática e Alerta com uso de radares meteorológicos e IA para antecipar crises e acionar protocolos de segurança.<br>• Previsão de Deslizamentos: Em parceria com a NASA, o COR utiliza modelos matemáticos e IA para cruzar dados de satélites e solo, antecipando áreas de instabilidade em encostas.<br>• Alerta Rio: O sistema analisa dados históricos para encontrar semelhanças entre o cenário meteorológico atual e eventos passados, permitindo a emissão de alertas precoces para a população.<br>• Sensores de Alagamento: O uso de IA em sensores IoT detecta o acúmulo de água em tempo real, diferenciando bolsões de enchentes graves."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.203434,-22.9121756,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Secretaria Municipal de Saúde do Rio de Janeiro</name>
+        <description><![CDATA["A Secretaria Municipal de Saúde (SMS) é o órgão da Prefeitura do Rio de Janeiro responsável por reformular e executar a política municipal de saúde e, como gestora plena do Sistema Único de Saúde (SUS) na cidade, garantir o atendimento universal da população, conforme os preceitos do SUS. É a SMS que, diante do conhecimento das características e demandas próprias da população carioca, organiza as prioridades da saúde pública da cidade, dentro do que é previsto nas políticas públicas e serviços ofertados pelo SUS. <br>Pela política definida no SUS, aos municípios cabe à assistência da Atenção Primária e o atendimento de urgência e emergência. Dessa forma, a SMS cumpre seu papel na organização do sistema. O município do Rio também é gestor pleno do SUS na cidade do Rio.<br>O Painel da Saúde é uma plataforma de Business Intelligence (BI) que centraliza os dados de toda a rede municipal — desde as Unidades Básicas (Clínicas da Família) até as grandes emergências e hospitais. Ele permite que gestores e cidadãos acompanhem, com transparência absoluta, o desempenho do sistema de saúde.<br>O painel exibe o fluxo de atendimentos em cada unidade, permitindo identificar gargalos ou picos de demanda instantaneamente. Se uma UPA está superlotada, o sistema auxilia na regulação e no redirecionamento de recursos.<br> É através deste painel que o Rio monitora a evolução de doenças como Dengue, Zika e Síndrome Respiratória. O cruzamento de dados geoespaciais permite que a prefeitura atue cirurgicamente em bairros com maior incidência de casos.<br>O painel monitora o estoque de medicamentos e a cobertura vacinal por faixa etária e região, garantindo que nunca falte suprimento onde a demanda é maior."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2056443,-22.9112433,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Secretaria Municipal de Desenvolvimento, Emprego e Inovação - SMDEI</name>
+        <description><![CDATA["A Secretaria Municipal de Desenvolvimento Econômico (SMDE) é o órgão da Prefeitura do Rio de Janeiro responsável por elaborar as políticas de desenvolvimento econômico do município do Rio de Janeiro. <br>Entre as competências da pasta estão a criação e gestão de diversos projetos relacionados ao desenvolvimento econômico sustentável do município pela melhoria do ambiente de negócios, bem como a elaboração de estudos de impacto econômico, municiando entidades governamentais de diferentes esferas, jornalistas, investidores, pesquisadores e cidadãos. <br>Tem como órgão vinculado a Companhia Carioca de Parcerias e Investimentos (CCPar), empresa pública responsável pelos contratos de concessão e Parcerias Público-Privadas da cidade."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.205632,-22.9111915,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CIVITAS</name>
+        <description><![CDATA["O CIVITAS é o ventro de inteligência de ponta da Secretaria Municipal de Ordem Pública (SEOP), projetado para ser o ponto de convergência de dados voltados à prevenção de delitos e fiscalização urbana. Localizado fisicamente junto ao COR, ele atua como um hub que processa informações em tempo real para apoiar as forças de segurança e a Guarda Municipal, utilizando tecnologia de última geração para tornar o Rio uma cidade mais vigiada e segura.<br>Pilares e Capacidades Técnicas:<br>Cercamento Eletrônico e Muralha Digital: O CIVITAS gerencia o sistema de câmeras inteligentes com tecnologia de LPR (Leitura de Placas) e reconhecimento de padrões. Isso permite o monitoramento de veículos roubados ou suspeitos em todos os principais eixos de entrada e saída da cidade.<br>Integração de Dados de Segurança: O centro unifica informações vindas do Disque-Denúncia, de sensores criminais e do próprio 1746, criando um mapa de calor que direciona o policiamento e as operações de ordem pública de forma preditiva."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2034765,-22.9121124,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Empresa Municipal de Informática - IPLANRIO</name>
+        <description><![CDATA["A IPLANRIO Empresa Municipal de Informática, é o órgão responsável pela tecnologia da informação da Prefeitura do Rio de Janeiro. Criada em 1979, é a empresa pública que lidera a transição do Rio de Janeiro para uma cidade inteligente. Atuando como o braço executor de tecnologia, a IPLAN é a responsável por projetar e operar soluções que simplificam a vida do carioca e modernizam a gestão municipal. Seu papel vai desde a manutenção da rede de dados até a criação de plataformas disruptivas que são referência nacional em governo digital.<br>Pilares e Contribuições Estratégicas:<br>Carioca Digital: A IPLAN é a criadora do portal e aplicativo que unifica centenas de serviços municipais em um único canal. É a identidade digital do cidadão, permitindo desde a emissão de guias de IPTU até o agendamento de serviços de saúde, eliminando burocracias e filas físicas.<br>Central 1746: A inteligência tecnológica por trás do principal canal de atendimento da prefeitura é desenvolvida pela IPLAN. O sistema integra solicitações via voz, web e app, permitindo o rastreamento em tempo real de cada demanda e gerando dados preciosos para a melhoria dos serviços urbanos.<br>Datalake Municipal: Em conjunto com o Escritório de Dados, a IPLAN construiu a infraestrutura técnica do Datalake. É a engenharia da IPLAN que garante a segurança, o armazenamento e a velocidade de processamento de terabytes de informações que sustentam a gestão baseada em evidências."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2081527,-22.9118744,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>SERPRO - Serviço Federal de Processamento de Dados</name>
+        <styleUrl>#icon-1899-9C27B0-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2339229,-22.9683343,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Instituto Municipal de Urbanismo Pereira Passos - IPP</name>
+        <description><![CDATA["Braço de pesquisa e dados da Prefeitura — Desde a sua fundação, o IPP coordenou grandes projetos urbanos, como o Rio Cidade, o Favela Bairro, o Rio Orla e o Porto Maravilha. O planejamento da candidatura da cidade a sede das Olimpíadas de 2016 também foi iniciado no instituto.<br>Outro aspecto marcante da atuação do IPP é a sua relevância como centro de referência de dados e conhecimento sobre o Rio, utilizado para a formulação e acompanhamento de políticas públicas, municipais ou não. Estas informações estão abertas para o uso e consulta da imprensa e de toda a população do Rio de Janeiro, inicialmente através do site Armazém de Dados, criado em 2001, e posteriormente através do site Data.Rio. Parceiro do IBGE e de institutos internacionais de dados."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.181443,-22.931291,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ginásios Educacionais Tecnológicos (GETs)</name>
+        <description><![CDATA["Os Ginásios Educacionais Tecnológicos (GETs) representam um modelo de escola vocacionada do século XXI, instituído pela Prefeitura do Rio de Janeiro para transformar o processo de ensino-aprendizagem através da inovação pedagógica. Operando obrigatoriamente em turno único, essas unidades buscam integrar a tecnologia de forma interdisciplinar ao cotidiano escolar, utilizando a abordagem STEAM (Ciência, Tecnologia, Engenharia, Artes e Matemática). <br>Nesse ambiente, o estudante deixa de ser um receptor passivo para se tornar protagonista de seu conhecimento, utilizando metodologias ativas como a Aprendizagem Baseada em Projetos e o Design Thinking. O foco não está apenas no produto final, mas no processo de construção, experimentação e colaboração ativa, sempre alinhado às diretrizes da BNCC e do Currículo Carioca. Com a meta de atingir 500 unidades até o final de 2028, os GETs posicionam a rede municipal do Rio como um polo de incubação de inovação, visando a democratização do acesso à tecnologia e o desenvolvimento sustentável e integral dos alunos."]]></description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2056315,-22.9111954,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>INPI - Instituto Nacional da Propriedade Industrial </name>
+        <description>O Instituto Nacional da Propriedade Industrial (INPI) oferece serviços como o registro de marcas, desenhos industriais, indicações geográficas, programas de computador e topografias de circuitos integrados, além da concessão de patentes e da averbação de contratos de franquia e transferência de tecnologia. Os depósitos de patentes em 2025 chegaram a 29.557, pedidos de desenhos industriais em 2025 9.872 uma alta de 35,7% em compaação a 2024, 7.236 de programas de computador ( e 720 pedidos de averbação de contratos de tecnologia. Os desenhos industriais e os programas de computador também tiveram seus recordes históricos.</description>
+        <styleUrl>#icon-1899-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1803892,-22.8992743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Naves do Conhecimento</name>
+      <Placemark>
+        <name>Nave do Conhecimento de Campo Grande</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.594832,-22.91358,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Engenho de Dentro</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.294098,-22.894816,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Irajá</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.327706,-22.831054,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Madureira</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.341604,-22.867908,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento Nova Brasília</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.272888,-22.865077,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Padre Miguel</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.456871,-22.868872,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Pavuna</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.37552,-22.81641,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento da Penha</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.267732,-22.838463,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Realengo</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.433039,-22.880413,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Santa Cruz</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.690095,-22.924717,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave do Conhecimento de Vila Aliança</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.482841,-22.869906,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave Do Conhecimento de Triagem</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.248014,-22.893899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave Satélite Paciência</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.625322,-22.922371,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave Satélite Jardim Palmares</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.637856,-22.889111,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nave Satélite Sepetiba</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.692707,-22.975252,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Lins de Vasconcelos</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.276856,-22.907479,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Maré</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.241988,-22.855267,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca dos Prazeres</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.203028,-22.934257,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Rio das Pedras</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.341904,-22.97856,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Rocinha - Estrada da Gávea</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.245042,-22.985975,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca São Cristóvão</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.229661,-22.889539,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Sepetiba</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.696868,-22.984742,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Tijuca</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.253549,-22.939919,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Vidigal</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.237833,-22.994546,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca UERJ</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.237342,-22.910207,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Bonsucesso</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.255646,-22.870499,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Circo Crescer e Viver</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.199754,-22.910041,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Pedra de Guaratiba</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.636062,-23.00187,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Dendê</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.185242,-22.80267,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Navezinha Carioca Beth Carvalho</name>
+        <styleUrl>#icon-1899-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.240528,-22.903681,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

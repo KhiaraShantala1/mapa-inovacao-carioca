@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Plataforma Inovação 3D - Rio</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    html, body, #cesiumContainer {
+      width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #000;
+    }
+    #menu {
+      position: absolute; top: 20px; left: 20px; z-index: 1000;
+      background: rgba(26, 54, 93, 0.95); padding: 20px; border-radius: 12px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 220px;
+    }
+    h3 { margin: 0 0 15px 0; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; }
+    .btn {
+      display: block; width: 100%; padding: 12px; margin-top: 10px;
+      background: #3182ce; color: white; border: none; border-radius: 6px;
+      cursor: pointer; font-weight: bold; text-align: left; transition: all 0.2s;
+    }
+    .btn:hover { background: #2b6cb0; transform: translateX(3px); }
+  </style>
+</head>
+<body>
+
+  <div id="menu">
+    <h3>Navegação Ecossistema</h3>
+    <button class="btn" onclick="irParaRioGeral()">🔄 Visão Geral (Rio 3D)</button>
+    <button class="btn" onclick="irParaIndustria()">🏭 Filtro: Indústria</button>
+  </div>
+
+  <div id="cesiumContainer"></div>
+
+  <script>
+    // Substitua pelo seu token do Cesium ion
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YTg2MmZlMS1jMWYxLTRhNTQtYWY4NS03MjM2MjAxOWU3MDIiLCJpZCI6NDU0NTgzLCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM2MjEwOTh9.SIFtge-AuaLuXsyAy_ICDHEC4YZJ6N1lrrI6O9AY_Co';
+
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrainProvider: Cesium.createWorldTerrain(),
+      animation: false,
+      timeline: false,
+      sceneModePicker: false,
+      baseLayerPicker: false,
+      geocoder: false,
+      navigationHelpButton: false,
+      infoBox: true // Ativa o balão de informações bonito quando clicar no ponto
+    });
+
+    // ==========================================
+    // 🚀 CARREGA O SEU ARQUIVO KML AQUI
+    // ==========================================
+    // Se o arquivo estiver na mesma pasta do GitHub, basta colocar o nome dele ali.
+    const kmlOpcoes = {
+      camera: viewer.camera,
+      canvas: viewer.scene.canvas
+    };
+    
+    Cesium.KmlDataSource.load('seu-mapa.kml', kmlOpcoes)
+      .then(function(dataSource) {
+        viewer.dataSources.add(dataSource);
+      })
+      .catch(function(error) {
+        console.error("Erro ao carregar o KML: ", error);
+      });
+    // ==========================================
+
+    function irParaRioGeral() {
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(-43.1729, -22.9068, 35000.0),
+        orientation: {
+          heading: Cesium.Math.toRadians(0.0),   
+          pitch: Cesium.Math.toRadians(-45.0),  
+          roll: 0.0
+        }
+      });
+    }
+
+    function irParaIndustria() {
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(-43.2030, -22.8960, 4000.0),
+        orientation: {
+          heading: Cesium.Math.toRadians(35.0),  
+          pitch: Cesium.Math.toRadians(-25.0),  
+          roll: 0.0
+        }
+      });
+    }
+
+    setTimeout(irParaRioGeral, 1000);
+  </script>
+</body>
+</html>
