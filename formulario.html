@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faça Parte - Mapa da Inovação Carioca</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#b7eaff",
+                    "inverse-primary": "#a9c7ff",
+                    "outline-variant": "#c4c6d0",
+                    "surface-tint": "#405f91",
+                    "on-primary-fixed": "#001b3d",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#713619",
+                    "tertiary-container": "#4f1c02",
+                    "tertiary": "#2f0c00",
+                    "on-surface": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#001f28",
+                    "primary": "#001736",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#00ccf9",
+                    "outline": "#747780",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#005266",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container": "#e5eeff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#264778",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "on-surface-variant": "#43474f",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#7594ca",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "secondary": "#00677f",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#cd805d",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "primary-container": "#002b5b",
+                    "secondary-fixed-dim": "#4cd6ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #00ccf9;
+            box-shadow: 0 0 0 3px rgba(0, 204, 249, 0.2);
+        }
+        .bg-mesh-gradient {
+            background-color: #f8f9ff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 204, 249, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 23, 54, 0.03) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-primary sticky top-0 z-50 shadow-sm border-b border-outline-variant/20 h-20 flex items-center">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-white tracking-tight">
+                Mapa da Inovação Carioca
+            </div>
+<nav class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-white/80 hover:text-secondary-container transition-colors duration-200" href="#">Início</a>
+<a class="font-label-md text-label-md text-white/80 hover:text-secondary-container transition-colors duration-200" href="#">Mapa Interativo</a>
+<a class="font-label-md text-label-md text-secondary-container border-b-2 border-secondary-container pb-1" href="#">Faça Parte</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-secondary-container border border-secondary-container px-6 py-2 rounded-lg hover:bg-secondary-container hover:text-primary transition-all active:scale-95">
+                    Entrar
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow bg-mesh-gradient py-stack-lg relative">
+<!-- Decoration element -->
+<div class="absolute top-0 right-0 w-1/3 h-1/3 opacity-10 pointer-events-none">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Title -->
+<section class="text-center mb-stack-lg">
+<span class="inline-block py-1 px-3 bg-secondary-container/10 text-secondary border border-secondary-container/30 rounded-full font-label-md text-label-md mb-4 uppercase tracking-widest">
+                    Contribua com o Ecossistema
+                </span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Inscreva sua Iniciativa</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Conecte seu projeto aos principais eixos de inovação do Rio de Janeiro. Ajude-nos a mapear e fortalecer o futuro tecnológico da nossa cidade.
+                </p>
+</section>
+<!-- Conversion Focused Card -->
+<div class="max-w-[800px] mx-auto">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+<!-- Left Accent for Innovation Points (Visual Style from System) -->
+<div class="w-2 md:w-4 bg-secondary-container"></div>
+<div class="flex-grow p-stack-lg md:p-stack-lg">
+<form class="grid grid-cols-1 gap-stack-md" id="submission-form">
+<!-- 1. Nome da Iniciativa -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary block" for="initiative_name">Nome da Iniciativa</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" style="font-size: 20px;">rocket_launch</span>
+<input class="w-full pl-11 pr-4 py-3 bg-white border border-outline rounded-lg font-body-md text-body-md form-input-focus transition-all" id="initiative_name" name="initiative_name" placeholder="Qual é o nome da iniciativa, instituição, empresa ou projeto?" type="text"/>
+</div>
+</div>
+<!-- 2. Descrição -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary block" for="description">Descrição</label>
+<textarea class="w-full px-4 py-3 bg-white border border-outline rounded-lg font-body-md text-body-md form-input-focus transition-all resize-none" id="description" name="description" placeholder="Como você descreveria a iniciativa?" rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- 3. Eixo Temático -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary block" for="theme_axis">Eixo Temático</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" style="font-size: 20px;">category</span>
+<select class="w-full pl-11 pr-10 py-3 bg-white border border-outline rounded-lg font-body-md text-body-md form-input-focus transition-all appearance-none" id="theme_axis" name="theme_axis">
+<option disabled="" selected="" value="">Selecione um eixo...</option>
+<option value="tecnologia">Tecnologia e Inovação</option>
+<option value="sustentabilidade">Sustentabilidade e Clima</option>
+<option value="economia_criativa">Economia Criativa</option>
+<option value="saude">Saúde e Biotecnologia</option>
+<option value="educacao">Educação e Talentos</option>
+<option value="cidades">Cidades Inteligentes</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- 4. Contato -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary block" for="contact">Contato</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" style="font-size: 20px;">alternate_email</span>
+<input class="w-full pl-11 pr-4 py-3 bg-white border border-outline rounded-lg font-body-md text-body-md form-input-focus transition-all" id="contact" name="contact" placeholder="Quais são os dados de contato?" type="text"/>
+</div>
+</div>
+</div>
+<!-- 5. Localização -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary block" for="location">Localização</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" style="font-size: 20px;">location_on</span>
+<input class="w-full pl-11 pr-4 py-3 bg-white border border-outline rounded-lg font-body-md text-body-md form-input-focus transition-all" id="location" name="location" placeholder="Onde a iniciativa está localizada? (Bairro ou Endereço)" type="text"/>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full py-5 bg-secondary-container text-primary font-bold font-body-lg text-body-lg rounded-xl shadow-lg hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center gap-3" type="submit">
+<span>Enviar Cadastro</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+<p class="font-caption text-caption text-on-surface-variant text-center mt-4">
+                                    Ao enviar, você concorda com nossos termos de transparência e processamento de dados.
+                                </p>
+</div>
+</form>
+</div>
+</div>
+<!-- Secondary Info Cards (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md mt-stack-md">
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary">verified</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Verificação</h3>
+<p class="font-caption text-caption text-on-surface-variant">Seus dados serão analisados em até 48h úteis.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary">visibility</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Visibilidade</h3>
+<p class="font-caption text-caption text-on-surface-variant">Apareça para investidores e parceiros estratégicos.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-start gap-4">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary">hub</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Rede</h3>
+<p class="font-caption text-caption text-on-surface-variant">Conecte-se com mais de 500 hubs cariocas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant py-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-md text-headline-md text-primary mb-2">Mapa da Inovação Carioca</div>
+<div class="font-caption text-caption text-on-surface-variant">
+                    © 2024 Mapa da Inovação Carioca. Prefeitura do Rio de Janeiro.
+                </div>
+</div>
+<nav class="flex gap-stack-md">
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacidade</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Termos de Uso</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Contato</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary transition-colors" href="#">Sobre</a>
+</nav>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">public</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Success Modal Interaction -->
+<div class="fixed inset-0 bg-primary-container/80 backdrop-blur-md flex items-center justify-center z-[100] opacity-0 pointer-events-none transition-opacity duration-300" id="success-overlay">
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl max-w-md text-center shadow-2xl scale-90 transition-transform duration-300" id="success-card">
+<div class="w-20 h-20 bg-secondary-container/20 rounded-full flex items-center justify-center mx-auto mb-stack-md">
+<span class="material-symbols-outlined text-secondary-container" style="font-size: 48px; font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Inscrição Recebida!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">
+                Obrigado por contribuir com o ecossistema carioca. Nossa equipe revisará os dados da sua iniciativa e entrará em contato em breve.
+            </p>
+<button class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-container transition-colors" onclick="closeModal()">
+                Entendido
+            </button>
+</div>
+</div>
+<script>
+        document.getElementById('submission-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const overlay = document.getElementById('success-overlay');
+            const card = document.getElementById('success-card');
+            
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+            card.classList.remove('scale-90');
+            card.classList.add('scale-100');
+        });
+
+        function closeModal() {
+            const overlay = document.getElementById('success-overlay');
+            const card = document.getElementById('success-card');
+            
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+            card.classList.add('scale-90');
+            card.classList.remove('scale-100');
+            
+            // Reset form
+            document.getElementById('submission-form').reset();
+        }
+
+        // Simple floating animation for the card
+        window.addEventListener('load', () => {
+            const formCard = document.querySelector('.max-w-\\[800px\\]');
+            formCard.style.opacity = '0';
+            formCard.style.transform = 'translateY(20px)';
+            formCard.style.transition = 'all 0.6s ease-out';
+            
+            setTimeout(() => {
+                formCard.style.opacity = '1';
+                formCard.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body></html>
