@@ -115,7 +115,7 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        /* Ajuste fino para os botões nativos do Cesium não conflitarem com o design */
+        /* Ajuste fino para os botões nativos do Cesium */
         .cesium-viewer-bottom { display: none !important; }
     </style>
 </head>
@@ -142,76 +142,79 @@
                 <h2 class="font-headline-md text-label-md text-primary uppercase tracking-wider mb-stack-md border-l-4 border-secondary-container pl-3">
                     Filtrar por Eixo de Inovação
                 </h2>
-                <div class="space-y-3">
+                <div class="space-y-3" id="eixos-filter-group">
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="factory">factory</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="INDÚSTRIA" checked/>
+                    <span class="material-symbols-outlined text-[#00E5FF] group-hover:scale-110 transition-transform" data-icon="factory">factory</span>
                     <span class="font-body-md text-body-md text-on-surface">Indústria</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="construction">construction</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="INFRAESTRUTURA" checked/>
+                    <span class="material-symbols-outlined text-[#FFEA00] group-hover:scale-110 transition-transform" data-icon="construction">construction</span>
                     <span class="font-body-md text-body-md text-on-surface">Infraestrutura</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="rocket_launch">rocket_launch</span>
-                    <span class="font-body-md text-body-md text-on-surface">Aceleradoras e Investidores</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="ACELERADORAS E INVESTIDORES" checked/>
+                    <span class="material-symbols-outlined text-[#FF3D00] group-hover:scale-110 transition-transform" data-icon="rocket_launch">rocket_launch</span>
+                    <span class="font-body-md text-body-md text-on-surface">Aceleradoras/Investidores</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="school">school</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="ACADÊMICO" checked/>
+                    <span class="material-symbols-outlined text-[#00E676] group-hover:scale-110 transition-transform" data-icon="school">school</span>
                     <span class="font-body-md text-body-md text-on-surface">Acadêmico</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="account_balance">account_balance</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="GOVERNAMENTAL" checked/>
+                    <span class="material-symbols-outlined text-[#2979FF] group-hover:scale-110 transition-transform" data-icon="account_balance">account_balance</span>
                     <span class="font-body-md text-body-md text-on-surface">Governamental</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="explore">explore</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="TURISMO" checked/>
+                    <span class="material-symbols-outlined text-[#E040FB] group-hover:scale-110 transition-transform" data-icon="explore">explore</span>
                     <span class="font-body-md text-body-md text-on-surface">Turismo</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="hub">hub</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="HUB DE ATIVAÇÃO" checked/>
+                    <span class="material-symbols-outlined text-[#FF1744] group-hover:scale-110 transition-transform" data-icon="hub">hub</span>
                     <span class="font-body-md text-body-md text-on-surface">Hub de Ativação</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="flight">flight</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="NAVE DECOLA" checked/>
+                    <span class="material-symbols-outlined text-[#FF9100] group-hover:scale-110 transition-transform" data-icon="flight">flight</span>
                     <span class="font-body-md text-body-md text-on-surface">Nave Decola</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="palette">palette</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="ECONOMIA CRIATIVA" checked/>
+                    <span class="material-symbols-outlined text-[#F50057] group-hover:scale-110 transition-transform" data-icon="palette">palette</span>
                     <span class="font-body-md text-body-md text-on-surface">Economia Criativa</span>
                 </label>
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                    <input checked="" class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
-                    <span class="material-symbols-outlined text-primary group-hover:text-secondary" data-icon="apartment">apartment</span>
+                    <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container filter-checkbox" type="checkbox" value="EMPRESAS E STARTUPS" checked/>
+                    <span class="material-symbols-outlined text-[#651FFF] group-hover:scale-110 transition-transform" data-icon="apartment">apartment</span>
                     <span class="font-body-md text-body-md text-on-surface">Empresas e Startups</span>
                 </label>
                 </div>
             </section>
                                     
-            
             <section>
                 <h2 class="font-headline-md text-label-md text-primary uppercase tracking-wider mb-stack-md border-l-4 border-secondary-container pl-3">Filtrar por Polo de Inovação</h2>
                 <div class="space-y-2">
                     <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                        <input class="w-5 h-5 border-outline text-secondary focus:ring-secondary-container" name="polo" type="radio"/>
+                        <input class="w-5 h-5 border-outline text-secondary focus:ring-secondary-container filter-radio" name="polo" type="radio" value="TODOS" checked/>
+                        <span class="font-body-md text-body-md text-on-surface">Todos os Polos</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
+                        <input class="w-5 h-5 border-outline text-secondary focus:ring-secondary-container filter-radio" name="polo" type="radio" value="CENTRO"/>
                         <span class="font-body-md text-body-md text-on-surface">Polo Centro</span>
                     </label>
                     <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
-                        <input class="w-5 h-5 border-outline text-secondary focus:ring-secondary-container" name="polo" type="radio"/>
+                        <input class="w-5 h-5 border-outline text-secondary focus:ring-secondary-container filter-radio" name="polo" type="radio" value="PORTO MARAVILHA"/>
                         <span class="font-body-md text-body-md text-on-surface">Polo Porto Maravilha</span>
                     </label>
                 </div>
             </section>
             <div class="pt-6">
-                <button class="w-full bg-primary text-white font-bold py-3 rounded-lg active:scale-95 transition-transform font-label-md text-label-md shadow-lg shadow-primary/20">Aplicar Filtros</button>
+                <button id="btn-apply-filters" class="w-full bg-primary text-white font-bold py-3 rounded-lg active:scale-95 transition-transform font-label-md text-label-md shadow-lg shadow-primary/20">Aplicar Filtros</button>
             </div>
         </div>
     </aside>
@@ -239,10 +242,10 @@
 </footer>
 
 <script>
-    // Inicialização Adaptada do CesiumJS
+    // Token de acesso Cesium Ion
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YTg2MmZlMS1jMWYxLTRhNTQtYWY4NS03MjM2MjAxOWU3MDIiLCJpZCI6NDU0NTgzLCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM2MjEwOTh9.SIFtge-AuaLuXsyAy_ICDHEC4YZJ6N1lrrI6O9AY_Co';
 
-    // DECLARAÇÃO DO VIEWER APENAS UMA VEZ
+    // Inicialização do Viewer do Cesium
     const viewer = new Cesium.Viewer('cesiumContainer', {
         terrainProvider: Cesium.createWorldTerrain ? Cesium.createWorldTerrain() : undefined,
         animation: false,
@@ -252,18 +255,39 @@
         baseLayerPicker: true,
         geocoder: false,
         homeButton: false,
-        infoBox: true // Habilita o balão de descrição nativo do KML
+        infoBox: true
     });
 
-    // Caminho do seu arquivo KML completo no repositório (ajuste o nome se for 'MIC (2).kml')
-    const kmlUrl = './MIC.kml'; 
+    // --- CORREÇÃO DO FILTRO VERDE/NÉVOA DISTANTE ---
+    viewer.scene.fog.enabled = false; // Desativa a névoa atmosférica de longo alcance
+    viewer.scene.globe.enableLighting = false; // Desativa efeitos agressivos de sombra do sol que geram colorações verdes/escuras na textura do mapa
 
-    // Carrega e limpa os estilos dinamicamente
+    // Mapeamento dos 10 motores/eixos com cores vivas e vibrantes
+    const colorMapping = {
+        "INDÚSTRIA": "#00E5FF",                 // Ciano Elétrico
+        "INFRAESTRUTURA": "#FFEA00",            // Amarelo Neon
+        "ACELERADORAS E INVESTIDORES": "#FF3D00", // Vermelho Alaranjado
+        "ACADÊMICO": "#00E676",                 // Verde Radioativo
+        "GOVERNAMENTAL": "#2979FF",             // Azul Elétrico
+        "TURISMO": "#E040FB",                   // Violeta Brilhante
+        "HUB DE ATIVAÇÃO": "#FF1744",           // Magenta Forte
+        "NAVE DECOLA": "#FF9100",               // Laranja Neon
+        "ECONOMIA CRIATIVA": "#F50057",         // Rosa Shocking
+        "EMPRESAS E STARTUPS": "#651FFF"        // Roxo Profundo/Neon
+    };
+
+    let globalKmlDataSource = null;
+
+    // Caminho para o KML
+    const kmlUrl = './MIC (2).kml'; 
+
+    // Carregamento e manipulação dinâmica de entidades
     Cesium.KmlDataSource.load(kmlUrl, {
         camera: viewer.scene.camera,
         canvas: viewer.scene.canvas,
-        clampToGround: true 
+        clampToGround: true // Garante a consistência espacial inicial
     }).then(function(dataSource) {
+        globalKmlDataSource = dataSource;
         viewer.dataSources.add(dataSource);
         
         const entities = dataSource.entities.values;
@@ -271,35 +295,105 @@
         for (let i = 0; i < entities.length; i++) {
             const entity = entities[i];
             
-            // Só estilizamos as entidades que são marcadores (pins) no mapa
             if (Cesium.defined(entity.billboard)) {
+                // --- CORREÇÃO DOS PINS FLUTUANDO (CLAMP AO CHÃO) ---
+                entity.billboard.heightReference = Cesium.HeightReference.CLAMP_TO_GROUND;
                 
-                // Força o uso do Pin padrão do Cesium (evita o erro das imagens CORS do Google)
+                // Força o marcador redondo padrão do Cesium
                 entity.billboard.image = 'https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Assets/Textures/pin.svg';
                 entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
-                entity.billboard.width = 32;
-                entity.billboard.height = 32;
+                entity.billboard.width = 38;  // Aumentado levemente para melhor usabilidade
+                entity.billboard.height = 38;
 
-                // Captura o nome da pasta onde o ponto está
-                const parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
+                // Captura o nome da pasta (Eixo de Inovação)
+                let parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
                 
-                // Define cores usando a função CORRETA: Cesium.Color.fromCssColorString
-                if (parentName.includes('INDUSTRIA') || parentName.includes('INDÚSTRIA')) {
-                    entity.billboard.color = Cesium.Color.fromCssColorString('#0288D1'); // Azul
-                } else if (parentName.includes('INFRAESTRUTURA')) {
-                    entity.billboard.color = Cesium.Color.fromCssColorString('#F9A825'); // Laranja/Amarelo
-                } else {
-                    // Cor padrão para qualquer outra pasta/categoria (Verde turquesa)
-                    entity.billboard.color = Cesium.Color.fromCssColorString('#00E676'); 
-                }
+                // Normaliza o nome para lidar com acentuações básicas
+                parentName = parentName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                // Define a cor de alto brilho com base no Eixo
+                let assignedColor = '#FFFFFF'; // Cor padrão caso não bata com nenhuma regra
+                
+                if (parentName.includes('INDUSTRIA')) assignedColor = colorMapping["INDÚSTRIA"];
+                else if (parentName.includes('INFRAESTRUTURA')) assignedColor = colorMapping["INFRAESTRUTURA"];
+                else if (parentName.includes('ACELERADORAS') || parentName.includes('INVESTIDORES')) assignedColor = colorMapping["ACELERADORAS E INVESTIDORES"];
+                else if (parentName.includes('ACADEMICO')) assignedColor = colorMapping["ACADÊMICO"];
+                else if (parentName.includes('GOVERNAMENTAL')) assignedColor = colorMapping["GOVERNAMENTAL"];
+                else if (parentName.includes('TURISMO')) assignedColor = colorMapping["TURISMO"];
+                else if (parentName.includes('HUB')) assignedColor = colorMapping["HUB DE ATIVAÇÃO"];
+                else if (parentName.includes('NAVE')) assignedColor = colorMapping["NAVE DECOLA"];
+                else if (parentName.includes('ECONOMIA') || parentName.includes('CRIATIVA')) assignedColor = colorMapping["ECONOMIA CRIATIVA"];
+                else if (parentName.includes('EMPRESA') || parentName.includes('STARTUP')) assignedColor = colorMapping["EMPRESAS E STARTUPS"];
+
+                entity.billboard.color = Cesium.Color.fromCssColorString(assignedColor);
+                
+                // Guardamos a categoria original e coordenadas na entidade para ajudar no filtro
+                entity.customCategory = parentName;
             }
         }
         
-        // Zoom automático perfeito englobando todos os pontos do mapa
         viewer.zoomTo(dataSource);
         
     }).catch(function(error) {
         console.error("Erro ao carregar ou processar o KML:", error);
+    });
+
+    // --- LÓGICA ATIVA DE FILTRAGEM ---
+    document.getElementById('btn-apply-filters').addEventListener('click', () => {
+        if (!globalKmlDataSource) return;
+
+        // 1. Pega todos os eixos selecionados na UI
+        const checkedCheckboxes = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+                                       .map(cb => cb.value);
+
+        // 2. Pega o Polo selecionado (TODOS, CENTRO, ou PORTO MARAVILHA)
+        const selectedPolo = document.querySelector('.filter-radio:checked').value;
+
+        const entities = globalKmlDataSource.entities.values;
+
+        entities.forEach(entity => {
+            if (Cesium.defined(entity.billboard)) {
+                const category = entity.customCategory || '';
+                
+                // Mapeamento do filtro de eixos
+                let matchesCategory = false;
+                if (category.includes('INDUSTRIA') && checkedCheckboxes.includes('INDÚSTRIA')) matchesCategory = true;
+                else if (category.includes('INFRAESTRUTURA') && checkedCheckboxes.includes('INFRAESTRUTURA')) matchesCategory = true;
+                else if ((category.includes('ACELERADORAS') || category.includes('INVESTIDORES')) && checkedCheckboxes.includes('ACELERADORAS E INVESTIDORES')) matchesCategory = true;
+                else if (category.includes('ACADEMICO') && checkedCheckboxes.includes('ACADÊMICO')) matchesCategory = true;
+                else if (category.includes('GOVERNAMENTAL') && checkedCheckboxes.includes('GOVERNAMENTAL')) matchesCategory = true;
+                else if (category.includes('TURISMO') && checkedCheckboxes.includes('TURISMO')) matchesCategory = true;
+                else if (category.includes('HUB') && checkedCheckboxes.includes('HUB DE ATIVAÇÃO')) matchesCategory = true;
+                else if (category.includes('NAVE') && checkedCheckboxes.includes('NAVE DECOLA')) matchesCategory = true;
+                else if ((category.includes('ECONOMIA') || category.includes('CRIATIVA')) && checkedCheckboxes.includes('ECONOMIA CRIATIVA')) matchesCategory = true;
+                else if ((category.includes('EMPRESA') || category.includes('STARTUP')) && checkedCheckboxes.includes('EMPRESAS E STARTUPS')) matchesCategory = true;
+
+                // Mapeamento do filtro de polos baseado em coordenadas (Limites do Centro e Porto Maravilha)
+                let matchesPolo = true;
+                if (selectedPolo !== 'TODOS' && entity.position) {
+                    const cartesianPosition = entity.position.getValue(Cesium.JulianDate.now());
+                    if (cartesianPosition) {
+                        const cartographic = Cesium.Cartographic.fromCartesian(cartesianPosition);
+                        const lon = Cesium.Math.toDegrees(cartographic.longitude);
+                        const lat = Cesium.Math.toDegrees(cartographic.latitude);
+
+                        // Polígono simples de delimitação aproximada dos polos
+                        if (selectedPolo === 'PORTO MARAVILHA') {
+                            // Delimitação aproximada da Região Portuária
+                            const inPorto = (lon >= -43.215 && lon <= -43.185 && lat >= -22.905 && lat <= -22.885);
+                            matchesPolo = inPorto;
+                        } else if (selectedPolo === 'CENTRO') {
+                            // Delimitação aproximada do Centro Financeiro/Lapa/Cinclândia
+                            const inCentro = (lon >= -43.195 && lon <= -43.170 && lat >= -22.918 && lat <= -22.898);
+                            matchesPolo = inCentro;
+                        }
+                    }
+                }
+
+                // Aplica a visibilidade: Se passar em ambos os filtros, exibe; senão, oculta.
+                entity.show = (matchesCategory && matchesPolo);
+            }
+        });
     });
 
     // Vincula os botões customizados do layout ao controle da câmera do Cesium
