@@ -8,11 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
-    <!-- Biblioteca do CesiumJS (CDN) -->
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
-    <!-- Tailwind Config Verbatim -->
     <script id="tailwind-config">
           tailwind.config = {
             darkMode: "class",
@@ -117,7 +115,7 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        /* Ajuste fino para os botões nativos do Cesium não conflitar com o design */
+        /* Ajuste fino para os botões nativos do Cesium não conflitarem com o design */
         .cesium-viewer-bottom { display: none !important; }
     </style>
 </head>
@@ -138,13 +136,12 @@
 </header>
 
 <main class="flex-grow flex flex-col md:flex-row h-[calc(100vh-80px)] overflow-hidden">
-    <!-- Sidebar Filtros -->
     <aside class="w-full md:w-[300px] bg-surface-container-lowest border-r border-outline-variant flex flex-col overflow-y-auto custom-scrollbar">
         <div class="p-6 space-y-stack-lg">
             <section>
                 <h2 class="font-headline-md text-label-md text-primary uppercase tracking-wider mb-stack-md border-l-4 border-secondary-container pl-3">
-                                        Filtrar por Eixo de Inovação
-                                    </h2>
+                    Filtrar por Eixo de Inovação
+                </h2>
                 <div class="space-y-3">
                 <label class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded-lg cursor-pointer transition-colors group">
                     <input class="w-5 h-5 rounded border-outline text-secondary focus:ring-secondary-container" type="checkbox"/>
@@ -198,7 +195,7 @@
                 </label>
                 </div>
             </section>
-                            
+                                    
             
             <section>
                 <h2 class="font-headline-md text-label-md text-primary uppercase tracking-wider mb-stack-md border-l-4 border-secondary-container pl-3">Filtrar por Polo de Inovação</h2>
@@ -219,11 +216,9 @@
         </div>
     </aside>
 
-    <!-- Container Real do CesiumJS -->
     <section class="flex-grow relative overflow-hidden bg-inverse-surface">
         <div id="cesiumContainer" class="absolute inset-0 w-full h-full"></div>
 
-        <!-- UI Overlays do Mapa Customizados -->
         <div class="absolute top-6 right-6 flex flex-col gap-3 z-10">
             <button id="btn-location" class="bg-surface-container-lowest/90 backdrop-blur-md p-3 rounded-xl shadow-xl text-primary hover:bg-white transition-colors">
                 <span class="material-symbols-outlined" data-icon="my_location">my_location</span>
@@ -247,6 +242,7 @@
     // Inicialização Adaptada do CesiumJS
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YTg2MmZlMS1jMWYxLTRhNTQtYWY4NS03MjM2MjAxOWU3MDIiLCJpZCI6NDU0NTgzLCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM2MjEwOTh9.SIFtge-AuaLuXsyAy_ICDHEC4YZJ6N1lrrI6O9AY_Co';
 
+    // DECLARAÇÃO DO VIEWER APENAS UMA VEZ
     const viewer = new Cesium.Viewer('cesiumContainer', {
         terrainProvider: Cesium.createWorldTerrain ? Cesium.createWorldTerrain() : undefined,
         animation: false,
@@ -259,23 +255,10 @@
         infoBox: true // Habilita o balão de descrição nativo do KML
     });
 
-    // String contendo o seu arquivo KML estruturado
-    const viewer = new Cesium.Viewer('cesiumContainer', {
-        terrainProvider: Cesium.createWorldTerrain ? Cesium.createWorldTerrain() : undefined,
-        animation: false,
-        timeline: false,
-        navigationHelpButton: false,
-        sceneModePicker: false,
-        baseLayerPicker: true,
-        geocoder: false,
-        homeButton: false,
-        infoBox: true 
-    });
-
-    // 2. Caminho do seu arquivo KML completo no repositório
+    // Caminho do seu arquivo KML completo no repositório (ajuste o nome se for 'MIC (2).kml')
     const kmlUrl = './MIC.kml'; 
 
-    // 3. Carrega e limpa os estilos dinamicamente
+    // Carrega e limpa os estilos dinamicamente
     Cesium.KmlDataSource.load(kmlUrl, {
         camera: viewer.scene.camera,
         canvas: viewer.scene.canvas,
@@ -312,7 +295,7 @@
             }
         }
         
-        // 4. Zoom automático perfeito englobando todos os pontos do mapa
+        // Zoom automático perfeito englobando todos os pontos do mapa
         viewer.zoomTo(dataSource);
         
     }).catch(function(error) {
