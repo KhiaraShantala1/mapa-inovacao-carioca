@@ -115,7 +115,6 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        /* Ajuste fino para os botões nativos do Cesium */
         .cesium-viewer-bottom { display: none !important; }
     </style>
 </head>
@@ -136,7 +135,7 @@
 </header>
 
 <main class="flex-grow flex flex-col md:flex-row h-[calc(100vh-80px)] overflow-hidden">
-    <aside class="w-full md:w-[300px] bg-surface-container-lowest border-r border-outline-variant flex flex-col overflow-y-auto custom-scrollbar">
+    <aside class="w-full md:w-[300px] bg-surface-container-lowest border-r border-outline-variant flex flex-col overflow-y-auto custom-scrollbar flex-shrink-0">
         <div class="p-6 space-y-stack-lg">
             <section>
                 <h2 class="font-headline-md text-label-md text-primary uppercase tracking-wider mb-stack-md border-l-4 border-secondary-container pl-3">
@@ -223,7 +222,10 @@
         <div id="cesiumContainer" class="absolute inset-0 w-full h-full"></div>
 
         <div class="absolute top-6 right-6 flex flex-col gap-3 z-10">
-            <button id="btn-location" class="bg-surface-container-lowest/90 backdrop-blur-md p-3 rounded-xl shadow-xl text-primary hover:bg-white transition-colors">
+            <button id="btn-default-view" title="Visualização Padrão (Rio de Janeiro)" class="bg-secondary-container text-primary p-3 rounded-xl shadow-xl hover:bg-white active:scale-95 transition-all">
+                <span class="material-symbols-outlined" data-icon="map">map</span>
+            </button>
+            <button id="btn-location" title="Minha Localização" class="bg-surface-container-lowest/90 backdrop-blur-md p-3 rounded-xl shadow-xl text-primary hover:bg-white active:scale-95 transition-colors">
                 <span class="material-symbols-outlined" data-icon="my_location">my_location</span>
             </button>
             <div class="flex flex-col bg-surface-container-lowest/90 backdrop-blur-md rounded-xl shadow-xl overflow-hidden">
@@ -258,34 +260,71 @@
         infoBox: true
     });
 
-    // --- CORREÇÃO DO FILTRO VERDE/NÉVOA DISTANTE ---
-    viewer.scene.fog.enabled = false; // Desativa a névoa atmosférica de longo alcance
-    viewer.scene.globe.enableLighting = false; // Desativa efeitos agressivos de sombra do sol que geram colorações verdes/escuras na textura do mapa
+    // --- ELIMINAÇÃO TOTAL DA NÉVOA VERDE E DO SOMBREAMENTO ESCURO ---
+    viewer.scene.fog.enabled = false; 
+    viewer.scene.globe.showAtmosphere = false; // Remove o brilho atmosférico azul/verde na distância
+    viewer.scene.globe.enableLighting = false; // Desliga luz solar dinâmica para manter o mapa nítido
 
-    // Mapeamento dos 10 motores/eixos com cores vivas e vibrantes
+    // Cores Neon / Brilhantes de Alto Contraste para os 10 Motores
     const colorMapping = {
-        "INDÚSTRIA": "#00E5FF",                 // Ciano Elétrico
-        "INFRAESTRUTURA": "#FFEA00",            // Amarelo Neon
-        "ACELERADORAS E INVESTIDORES": "#FF3D00", // Vermelho Alaranjado
-        "ACADÊMICO": "#00E676",                 // Verde Radioativo
-        "GOVERNAMENTAL": "#2979FF",             // Azul Elétrico
-        "TURISMO": "#E040FB",                   // Violeta Brilhante
-        "HUB DE ATIVAÇÃO": "#FF1744",           // Magenta Forte
-        "NAVE DECOLA": "#FF9100",               // Laranja Neon
-        "ECONOMIA CRIATIVA": "#F50057",         // Rosa Shocking
-        "EMPRESAS E STARTUPS": "#651FFF"        // Roxo Profundo/Neon
+        "INDÚSTRIA": "#00F0FF",                 // Ciano Neon Ultra
+        "INFRAESTRUTURA": "#FFF500",            // Amarelo Neon Puro
+        "ACELERADORAS E INVESTIDORES": "#FF2A00", // Vermelho Elétrico
+        "ACADÊMICO": "#00FF66",                 // Verde Radioativo Brilhante
+        "GOVERNAMENTAL": "#1A75FF",             // Azul Elétrico Intenso
+        "TURISMO": "#FF00E4",                   // Magenta Choque
+        "HUB DE ATIVAÇÃO": "#FF003C",           // Vermelho Rubi Vivo
+        "NAVE DECOLA": "#FF7A00",               // Laranja Brilhante
+        "ECONOMIA CRIATIVA": "#FF007A",         // Pink Neon
+        "EMPRESAS E STARTUPS": "#7A00FF"        // Roxo Neon
     };
 
+    // Função para criar um Pin Redondo de altíssimo brilho no Canvas (corrige o "escurecimento" do Cesium)
+    function createNeonPinCanvas(colorHex) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 48;
+        canvas.height = 48;
+        const ctx = canvas.getContext('2d');
+
+        // Sombra de fundo (Glow suave)
+        ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+        ctx.shadowBlur = 4;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 2;
+
+        // Desenhar a haste do pin (triângulo apontando para baixo)
+        ctx.beginPath();
+        ctx.moveTo(24, 46);
+        ctx.lineTo(14, 26);
+        ctx.lineTo(34, 26);
+        ctx.closePath();
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fill();
+
+        // Desenhar o círculo do Pin
+        ctx.shadowBlur = 0; // Desativa sombra interna
+        ctx.beginPath();
+        ctx.arc(24, 20, 14, 0, 2 * Math.PI);
+        ctx.fillStyle = "#FFFFFF"; // Borda/fundo branco
+        ctx.fill();
+
+        // Círculo interno colorido com cor real ultra-viva
+        ctx.beginPath();
+        ctx.arc(24, 20, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = colorHex;
+        ctx.fill();
+
+        return canvas;
+    }
+
     let globalKmlDataSource = null;
+    const kmlUrl = './MIC (2).kml'; 
 
-    // Caminho para o KML
-    const kmlUrl = './MIC.kml'; 
-
-    // Carregamento e manipulação dinâmica de entidades
+    // Carregamento do KML e manipulação de entidades
     Cesium.KmlDataSource.load(kmlUrl, {
         camera: viewer.scene.camera,
         canvas: viewer.scene.canvas,
-        clampToGround: true // Garante a consistência espacial inicial
+        clampToGround: true 
     }).then(function(dataSource) {
         globalKmlDataSource = dataSource;
         viewer.dataSources.add(dataSource);
@@ -296,23 +335,15 @@
             const entity = entities[i];
             
             if (Cesium.defined(entity.billboard)) {
-                // --- CORREÇÃO DOS PINS FLUTUANDO (CLAMP AO CHÃO) ---
+                // --- GARANTE QUE NENHUM PIN ESTEJA FLUTUANDO (CLAMP TO GROUND ATIVO) ---
                 entity.billboard.heightReference = Cesium.HeightReference.CLAMP_TO_GROUND;
-                
-                // Força o marcador redondo padrão do Cesium
-                entity.billboard.image = 'https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Assets/Textures/pin.svg';
                 entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
-                entity.billboard.width = 38;  // Aumentado levemente para melhor usabilidade
-                entity.billboard.height = 38;
 
-                // Captura o nome da pasta (Eixo de Inovação)
+                // Captura a categoria para mapear as cores
                 let parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
-                
-                // Normaliza o nome para lidar com acentuações básicas
                 parentName = parentName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-                // Define a cor de alto brilho com base no Eixo
-                let assignedColor = '#FFFFFF'; // Cor padrão caso não bata com nenhuma regra
+                let assignedColor = '#FFFFFF';
                 
                 if (parentName.includes('INDUSTRIA')) assignedColor = colorMapping["INDÚSTRIA"];
                 else if (parentName.includes('INFRAESTRUTURA')) assignedColor = colorMapping["INFRAESTRUTURA"];
@@ -325,37 +356,47 @@
                 else if (parentName.includes('ECONOMIA') || parentName.includes('CRIATIVA')) assignedColor = colorMapping["ECONOMIA CRIATIVA"];
                 else if (parentName.includes('EMPRESA') || parentName.includes('STARTUP')) assignedColor = colorMapping["EMPRESAS E STARTUPS"];
 
-                entity.billboard.color = Cesium.Color.fromCssColorString(assignedColor);
-                
-                // Guardamos a categoria original e coordenadas na entidade para ajudar no filtro
+                // Substitui a imagem do Billboard pelo Canvas dinâmico ultra-vibrante
+                entity.billboard.image = createNeonPinCanvas(assignedColor);
                 entity.customCategory = parentName;
             }
         }
         
-        viewer.zoomTo(dataSource);
+        // Enquadramento de início
+        triggerDefaultView();
         
     }).catch(function(error) {
         console.error("Erro ao carregar ou processar o KML:", error);
     });
 
+    // --- FUNÇÃO DE VISUALIZAÇÃO PADRÃO (RIO DE JANEIRO ENQUADRADO) ---
+    function triggerDefaultView() {
+        viewer.camera.flyTo({
+            // Ajustado para englobar as extremidades Leste-Oeste e Norte-Sul do município do RJ perfeitamente de cima
+            destination: Cesium.Cartesian3.fromDegrees(-43.4300, -22.9200, 75000),
+            orientation: {
+                heading: Cesium.Math.toRadians(0.0),
+                pitch: Cesium.Math.toRadians(-75), // Visualização levemente inclinada para dar percepção de profundidade sem perder visibilidade
+                roll: 0.0
+            },
+            duration: 2.0
+        });
+    }
+
     // --- LÓGICA ATIVA DE FILTRAGEM ---
     document.getElementById('btn-apply-filters').addEventListener('click', () => {
         if (!globalKmlDataSource) return;
 
-        // 1. Pega todos os eixos selecionados na UI
         const checkedCheckboxes = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
                                        .map(cb => cb.value);
 
-        // 2. Pega o Polo selecionado (TODOS, CENTRO, ou PORTO MARAVILHA)
         const selectedPolo = document.querySelector('.filter-radio:checked').value;
-
         const entities = globalKmlDataSource.entities.values;
 
         entities.forEach(entity => {
             if (Cesium.defined(entity.billboard)) {
                 const category = entity.customCategory || '';
                 
-                // Mapeamento do filtro de eixos
                 let matchesCategory = false;
                 if (category.includes('INDUSTRIA') && checkedCheckboxes.includes('INDÚSTRIA')) matchesCategory = true;
                 else if (category.includes('INFRAESTRUTURA') && checkedCheckboxes.includes('INFRAESTRUTURA')) matchesCategory = true;
@@ -368,7 +409,6 @@
                 else if ((category.includes('ECONOMIA') || category.includes('CRIATIVA')) && checkedCheckboxes.includes('ECONOMIA CRIATIVA')) matchesCategory = true;
                 else if ((category.includes('EMPRESA') || category.includes('STARTUP')) && checkedCheckboxes.includes('EMPRESAS E STARTUPS')) matchesCategory = true;
 
-                // Mapeamento do filtro de polos baseado em coordenadas (Limites do Centro e Porto Maravilha)
                 let matchesPolo = true;
                 if (selectedPolo !== 'TODOS' && entity.position) {
                     const cartesianPosition = entity.position.getValue(Cesium.JulianDate.now());
@@ -377,26 +417,24 @@
                         const lon = Cesium.Math.toDegrees(cartographic.longitude);
                         const lat = Cesium.Math.toDegrees(cartographic.latitude);
 
-                        // Polígono simples de delimitação aproximada dos polos
                         if (selectedPolo === 'PORTO MARAVILHA') {
-                            // Delimitação aproximada da Região Portuária
                             const inPorto = (lon >= -43.215 && lon <= -43.185 && lat >= -22.905 && lat <= -22.885);
                             matchesPolo = inPorto;
                         } else if (selectedPolo === 'CENTRO') {
-                            // Delimitação aproximada do Centro Financeiro/Lapa/Cinclândia
                             const inCentro = (lon >= -43.195 && lon <= -43.170 && lat >= -22.918 && lat <= -22.898);
                             matchesPolo = inCentro;
                         }
                     }
                 }
 
-                // Aplica a visibilidade: Se passar em ambos os filtros, exibe; senão, oculta.
                 entity.show = (matchesCategory && matchesPolo);
             }
         });
     });
 
-    // Vincula os botões customizados do layout ao controle da câmera do Cesium
+    // Controladores dos botões de navegação
+    document.getElementById('btn-default-view').addEventListener('click', triggerDefaultView);
+
     document.getElementById('btn-zoom-in').addEventListener('click', () => {
         viewer.camera.zoomIn(viewer.camera.positionCartographic.height * 0.3);
     });
@@ -404,7 +442,7 @@
         viewer.camera.zoomOut(viewer.camera.positionCartographic.height * 0.3);
     });
     document.getElementById('btn-location').addEventListener('click', () => {
-        // Centraliza de volta no Rio de Janeiro (Coordenadas aproximadas do Centro)
+        // Localiza de volta na região central do Rio de Janeiro
         viewer.camera.flyTo({
             destination: Cesium.Cartesian3.fromDegrees(-43.2044, -22.9100, 20000),
             orientation: { heading: 0.0, pitch: Cesium.Math.toRadians(-45), roll: 0.0 }
