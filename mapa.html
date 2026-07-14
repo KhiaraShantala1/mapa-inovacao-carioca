@@ -267,6 +267,19 @@
         canvas: viewer.scene.canvas
     }).then(function(dataSource) {
         viewer.dataSources.add(dataSource);
+
+    const entities = dataSource.entities.values;
+    for (let i = 0; i < entities.length; i++) {
+        const entity = entities[i];
+        if (Cesium.defined(entity.billboard)) {
+            // Se o ícone falhar ao carregar ou for do domínio do Google My Maps, substituímos por um padrão do Cesium
+            entity.billboard.image = 'https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Assets/Textures/pin.svg';
+            entity.billboard.color = Cesium.Color.fromCssString('#00ccf9'); // Cor azul do seu tema
+            entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
+            entity.billboard.width = 32;
+            entity.billboard.height = 32;
+        }
+    }
         
         // Move a câmera automaticamente para focar nos pontos do KML com inclinação 3D
         viewer.zoomTo(dataSource, new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-45), 15000));
