@@ -260,31 +260,63 @@
     });
 
     // String contendo o seu arquivo KML estruturado
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: Cesium.createWorldTerrain ? Cesium.createWorldTerrain() : undefined,
+        animation: false,
+        timeline: false,
+        navigationHelpButton: false,
+        sceneModePicker: false,
+        baseLayerPicker: true,
+        geocoder: false,
+        homeButton: false,
+        infoBox: true 
+    });
+
+    // 2. Caminho do seu arquivo KML completo no repositório
     const kmlUrl = './MIC.kml'; 
 
+    // 3. Carrega e limpa os estilos dinamicamente
     Cesium.KmlDataSource.load(kmlUrl, {
         camera: viewer.scene.camera,
-        canvas: viewer.scene.canvas
+        canvas: viewer.scene.canvas,
+        clampToGround: true 
     }).then(function(dataSource) {
         viewer.dataSources.add(dataSource);
-
-    const entities = dataSource.entities.values;
-    for (let i = 0; i < entities.length; i++) {
-        const entity = entities[i];
-        if (Cesium.defined(entity.billboard)) {
-            // Se o ícone falhar ao carregar ou for do domínio do Google My Maps, substituímos por um padrão do Cesium
-            entity.billboard.image = 'https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Assets/Textures/pin.svg';
-            entity.billboard.color = Cesium.Color.fromCssString('#00ccf9'); // Cor azul do seu tema
-            entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
-            entity.billboard.width = 32;
-            entity.billboard.height = 32;
-        }
-    }
         
-        // Move a câmera automaticamente para focar nos pontos do KML com inclinação 3D
-        viewer.zoomTo(dataSource, new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-45), 15000));
+        const entities = dataSource.entities.values;
+        
+        for (let i = 0; i < entities.length; i++) {
+            const entity = entities[i];
+            
+            // Só estilizamos as entidades que são marcadores (pins) no mapa
+            if (Cesium.defined(entity.billboard)) {
+                
+                // Força o uso do Pin padrão do Cesium (evita o erro das imagens CORS do Google)
+                entity.billboard.image = 'https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Assets/Textures/pin.svg';
+                entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
+                entity.billboard.width = 32;
+                entity.billboard.height = 32;
+
+                // Captura o nome da pasta onde o ponto está
+                const parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
+                
+                // Define cores usando a função CORRETA: Cesium.Color.fromCssColorString
+                if (parentName.includes('INDUSTRIA') || parentName.includes('INDÚSTRIA')) {
+                    entity.billboard.color = Cesium.Color.fromCssColorString('#0288D1'); // Azul
+                } else if (parentName.includes('INFRAESTRUTURA')) {
+                    entity.billboard.color = Cesium.Color.fromCssColorString('#F9A825'); // Laranja/Amarelo
+                } else {
+                    // Cor padrão para qualquer outra pasta/categoria (Verde turquesa)
+                    entity.billboard.color = Cesium.Color.fromCssColorString('#00E676'); 
+                }
+            }
+        }
+        
+        // 4. Zoom automático perfeito englobando todos os pontos do mapa
+        viewer.zoomTo(dataSource);
+        
     }).catch(function(error) {
-        console.error("Erro ao carregar o arquivo KML no Cesium:", error);
+        console.error("Erro ao carregar ou processar o KML:", error);
     });
 
     // Vincula os botões customizados do layout ao controle da câmera do Cesium
