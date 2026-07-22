@@ -247,213 +247,212 @@
     // Token de acesso Cesium Ion
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YTg2MmZlMS1jMWYxLTRhNTQtYWY4NS03MjM2MjAxOWU3MDIiLCJpZCI6NDU0NTgzLCJpc3MiOiJodHRwczovL2FwaS5jZXNpdW0uY29tIiwiYXVkIjoidW5kZWZpbmVkX2RlZmF1bHQiLCJpYXQiOjE3ODM2MjEwOTh9.SIFtge-AuaLuXsyAy_ICDHEC4YZJ6N1lrrI6O9AY_Co';
 
-    // Inicialização do Viewer do Cesium
-    const viewer = new Cesium.Viewer('cesiumContainer', {
-        terrainProvider: Cesium.createWorldTerrain ? Cesium.createWorldTerrain() : undefined,
-        animation: false,
-        timeline: false,
-        navigationHelpButton: false,
-        sceneModePicker: false,
-        baseLayerPicker: true,
-        geocoder: false,
-        homeButton: false,
-        infoBox: true
-    });
-
-    // --- ELIMINAÇÃO TOTAL DA NÉVOA VERDE E DO SOMBREAMENTO ESCURO ---
-    viewer.scene.fog.enabled = false; 
-    viewer.scene.globe.showAtmosphere = false; // Remove o brilho atmosférico azul/verde na distância
-    viewer.scene.globe.enableLighting = false; // Desliga luz solar dinâmica para manter o mapa nítido
-
-    // Cores Neon / Brilhantes de Alto Contraste para os 10 Motores
-    const colorMapping = {
-        "INDÚSTRIA": "#00F0FF",                 // Ciano Neon Ultra
-        "INFRAESTRUTURA": "#FFF500",            // Amarelo Neon Puro
-        "ACELERADORAS E INVESTIDORES": "#FF2A00", // Vermelho Elétrico
-        "ACADÊMICO": "#00FF66",                 // Verde Radioativo Brilhante
-        "GOVERNAMENTAL": "#1A75FF",             // Azul Elétrico Intenso
-        "TURISMO": "#FF00E4",                   // Magenta Choque
-        "HUB DE ATIVAÇÃO": "#FF003C",           // Vermelho Rubi Vivo
-        "NAVE DECOLA": "#FF7A00",               // Laranja Brilhante
-        "ECONOMIA CRIATIVA": "#FF007A",         // Pink Neon
-        "EMPRESAS E STARTUPS": "#7A00FF"        // Roxo Neon
-    };
-
-    // Função para criar um Pin Redondo de altíssimo brilho no Canvas (corrige o "escurecimento" do Cesium)
-    function createNeonPinCanvas(colorHex) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 48;
-        canvas.height = 48;
-        const ctx = canvas.getContext('2d');
-
-        // Sombra de fundo (Glow suave)
-        ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
-        ctx.shadowBlur = 4;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 2;
-
-        // Desenhar a haste do pin (triângulo apontando para baixo)
-        ctx.beginPath();
-        ctx.moveTo(24, 46);
-        ctx.lineTo(14, 26);
-        ctx.lineTo(34, 26);
-        ctx.closePath();
-        ctx.fillStyle = "#FFFFFF";
-        ctx.fill();
-
-        // Desenhar o círculo do Pin
-        ctx.shadowBlur = 0; // Desativa sombra interna
-        ctx.beginPath();
-        ctx.arc(24, 20, 14, 0, 2 * Math.PI);
-        ctx.fillStyle = "#FFFFFF"; // Borda/fundo branco
-        ctx.fill();
-
-        // Círculo interno colorido com cor real ultra-viva
-        ctx.beginPath();
-        ctx.arc(24, 20, 10, 0, 2 * Math.PI);
-        ctx.fillStyle = colorHex;
-        ctx.fill();
-
-        return canvas;
-    }
-
-    let globalKmlDataSource = null;
-    const kmlUrl = './MIC.kml'; 
-
-    // Carregamento do KML e manipulação de entidades
-    Cesium.KmlDataSource.load(kmlUrl, {
-        camera: viewer.scene.camera,
-        canvas: viewer.scene.canvas,
-        clampToGround: true 
-    }).then(function(dataSource) {
-        globalKmlDataSource = dataSource;
-        viewer.dataSources.add(dataSource);
-        
-        const entities = dataSource.entities.values;
-        
-        for (let i = 0; i < entities.length; i++) {
-            const entity = entities[i];
-            
-            if (Cesium.defined(entity.billboard)) {
-                // --- GARANTE QUE NENHUM PIN ESTEJA FLUTUANDO (CLAMP TO GROUND ATIVO) ---
-                entity.billboard.heightReference = Cesium.HeightReference.CLAMP_TO_GROUND;
-                entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
-
-                // Captura a categoria para mapear as cores
-                let parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
-                parentName = parentName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                let assignedColor = '#FFFFFF';
-                
-                if (parentName.includes('INDUSTRIA')) assignedColor = colorMapping["INDÚSTRIA"];
-                else if (parentName.includes('INFRAESTRUTURA')) assignedColor = colorMapping["INFRAESTRUTURA"];
-                else if (parentName.includes('ACELERADORAS') || parentName.includes('INVESTIDORES')) assignedColor = colorMapping["ACELERADORAS E INVESTIDORES"];
-                else if (parentName.includes('ACADEMICO')) assignedColor = colorMapping["ACADÊMICO"];
-                else if (parentName.includes('GOVERNAMENTAL')) assignedColor = colorMapping["GOVERNAMENTAL"];
-                else if (parentName.includes('TURISMO')) assignedColor = colorMapping["TURISMO"];
-                else if (parentName.includes('HUB')) assignedColor = colorMapping["HUB DE ATIVAÇÃO"];
-                else if (parentName.includes('NAVE')) assignedColor = colorMapping["NAVE DECOLA"];
-                else if (parentName.includes('ECONOMIA') || parentName.includes('CRIATIVA')) assignedColor = colorMapping["ECONOMIA CRIATIVA"];
-                else if (parentName.includes('EMPRESA') || parentName.includes('STARTUP')) assignedColor = colorMapping["EMPRESAS E STARTUPS"];
-
-                // Substitui a imagem do Billboard pelo Canvas dinâmico ultra-vibrante
-                entity.billboard.image = createNeonPinCanvas(assignedColor);
-                entity.customCategory = parentName;
-            }
-        }
-        
-        // Enquadramento de início
-        triggerDefaultView();
-        
-    }).catch(function(error) {
-        console.error("Erro ao carregar ou processar o KML:", error);
-    });
-
-    // --- FUNÇÃO DE VISUALIZAÇÃO PADRÃO (RIO DE JANEIRO ENQUADRADO) ---
-    function triggerDefaultView() {
-        viewer.camera.flyTo({
-            // Ajustado para englobar as extremidades Leste-Oeste e Norte-Sul do município do RJ perfeitamente de cima
-            destination: Cesium.Cartesian3.fromDegrees(-43.4300, -22.9200, 75000),
-            orientation: {
-                heading: Cesium.Math.toRadians(0.0),
-                pitch: Cesium.Math.toRadians(-75), // Visualização levemente inclinada para dar percepção de profundidade sem perder visibilidade
-                roll: 0.0
-            },
-            duration: 2.0
+    // Inicialização do Viewer do Cesium COM TERRENO 3D ATIVO
+    async function initCesium() {
+        const viewer = new Cesium.Viewer('cesiumContainer', {
+            // Ativa o modelo tridimensional de relevo do planeta Terra
+            terrain: Cesium.Terrain.fromWorldTerrain(),
+            animation: false,
+            timeline: false,
+            navigationHelpButton: false,
+            sceneModePicker: false,
+            baseLayerPicker: true,
+            geocoder: false,
+            homeButton: false,
+            infoBox: true
         });
-    }
 
-    // --- LÓGICA ATIVA DE FILTRAGEM ---
-    document.getElementById('btn-apply-filters').addEventListener('click', () => {
-        if (!globalKmlDataSource) return;
+        // --- MANTER CORES CLARAS E SEM NÉVOA, MAS COM VISÃO 3D ---
+        viewer.scene.fog.enabled = false; 
+        viewer.scene.globe.showAtmosphere = false; 
+        
+        // Garante suporte a profundidade de terreno (3D real para montanhas e vales)
+        viewer.scene.globe.depthTestAgainstTerrain = true;
 
-        const checkedCheckboxes = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
-                                       .map(cb => cb.value);
+        // Cores Neon / Brilhantes de Alto Contraste para os Motores
+        const colorMapping = {
+            "INDÚSTRIA": "#00F0FF",
+            "INFRAESTRUTURA": "#FFF500",
+            "ACELERADORAS E INVESTIDORES": "#FF2A00",
+            "ACADÊMICO": "#00FF66",
+            "GOVERNAMENTAL": "#1A75FF",
+            "TURISMO": "#FF00E4",
+            "HUB DE ATIVAÇÃO": "#FF003C",
+            "NAVE DECOLA": "#FF7A00",
+            "ECONOMIA CRIATIVA": "#FF007A",
+            "EMPRESAS E STARTUPS": "#7A00FF"
+        };
 
-        const selectedPolo = document.querySelector('.filter-radio:checked').value;
-        const entities = globalKmlDataSource.entities.values;
+        // Função para criar os Pins de Alto Brilho em Canvas
+        function createNeonPinCanvas(colorHex) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 48;
+            canvas.height = 48;
+            const ctx = canvas.getContext('2d');
 
-        entities.forEach(entity => {
-            if (Cesium.defined(entity.billboard)) {
-                const category = entity.customCategory || '';
+            // Sombra
+            ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 2;
+
+            // Haste
+            ctx.beginPath();
+            ctx.moveTo(24, 46);
+            ctx.lineTo(14, 26);
+            ctx.lineTo(34, 26);
+            ctx.closePath();
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fill();
+
+            // Círculo Borda
+            ctx.shadowBlur = 0;
+            ctx.beginPath();
+            ctx.arc(24, 20, 14, 0, 2 * Math.PI);
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fill();
+
+            // Círculo Interno Colorido
+            ctx.beginPath();
+            ctx.arc(24, 20, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = colorHex;
+            ctx.fill();
+
+            return canvas;
+        }
+
+        let globalKmlDataSource = null;
+        const kmlUrl = './MIC (2).kml';
+
+        // Carregamento do KML acoplado ao terreno 3D
+        try {
+            const dataSource = await Cesium.KmlDataSource.load(kmlUrl, {
+                camera: viewer.scene.camera,
+                canvas: viewer.scene.canvas,
+                clampToGround: true // Garante que o ponto colará na superfície do morro/terreno
+            });
+
+            globalKmlDataSource = dataSource;
+            viewer.dataSources.add(dataSource);
+            
+            const entities = dataSource.entities.values;
+            
+            for (let i = 0; i < entities.length; i++) {
+                const entity = entities[i];
                 
-                let matchesCategory = false;
-                if (category.includes('INDUSTRIA') && checkedCheckboxes.includes('INDÚSTRIA')) matchesCategory = true;
-                else if (category.includes('INFRAESTRUTURA') && checkedCheckboxes.includes('INFRAESTRUTURA')) matchesCategory = true;
-                else if ((category.includes('ACELERADORAS') || category.includes('INVESTIDORES')) && checkedCheckboxes.includes('ACELERADORAS E INVESTIDORES')) matchesCategory = true;
-                else if (category.includes('ACADEMICO') && checkedCheckboxes.includes('ACADÊMICO')) matchesCategory = true;
-                else if (category.includes('GOVERNAMENTAL') && checkedCheckboxes.includes('GOVERNAMENTAL')) matchesCategory = true;
-                else if (category.includes('TURISMO') && checkedCheckboxes.includes('TURISMO')) matchesCategory = true;
-                else if (category.includes('HUB') && checkedCheckboxes.includes('HUB DE ATIVAÇÃO')) matchesCategory = true;
-                else if (category.includes('NAVE') && checkedCheckboxes.includes('NAVE DECOLA')) matchesCategory = true;
-                else if ((category.includes('ECONOMIA') || category.includes('CRIATIVA')) && checkedCheckboxes.includes('ECONOMIA CRIATIVA')) matchesCategory = true;
-                else if ((category.includes('EMPRESA') || category.includes('STARTUP')) && checkedCheckboxes.includes('EMPRESAS E STARTUPS')) matchesCategory = true;
+                if (Cesium.defined(entity.billboard)) {
+                    entity.billboard.heightReference = Cesium.HeightReference.CLAMP_TO_GROUND;
+                    entity.billboard.verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
 
-                let matchesPolo = true;
-                if (selectedPolo !== 'TODOS' && entity.position) {
-                    const cartesianPosition = entity.position.getValue(Cesium.JulianDate.now());
-                    if (cartesianPosition) {
-                        const cartographic = Cesium.Cartographic.fromCartesian(cartesianPosition);
-                        const lon = Cesium.Math.toDegrees(cartographic.longitude);
-                        const lat = Cesium.Math.toDegrees(cartographic.latitude);
+                    let parentName = entity.parent && entity.parent.name ? entity.parent.name.toUpperCase().trim() : '';
+                    parentName = parentName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-                        if (selectedPolo === 'PORTO MARAVILHA') {
-                            const inPorto = (lon >= -43.215 && lon <= -43.185 && lat >= -22.905 && lat <= -22.885);
-                            matchesPolo = inPorto;
-                        } else if (selectedPolo === 'CENTRO') {
-                            const inCentro = (lon >= -43.195 && lon <= -43.170 && lat >= -22.918 && lat <= -22.898);
-                            matchesPolo = inCentro;
+                    let assignedColor = '#FFFFFF';
+                    
+                    if (parentName.includes('INDUSTRIA')) assignedColor = colorMapping["INDÚSTRIA"];
+                    else if (parentName.includes('INFRAESTRUTURA')) assignedColor = colorMapping["INFRAESTRUTURA"];
+                    else if (parentName.includes('ACELERADORAS') || parentName.includes('INVESTIDORES')) assignedColor = colorMapping["ACELERADORAS E INVESTIDORES"];
+                    else if (parentName.includes('ACADEMICO')) assignedColor = colorMapping["ACADÊMICO"];
+                    else if (parentName.includes('GOVERNAMENTAL')) assignedColor = colorMapping["GOVERNAMENTAL"];
+                    else if (parentName.includes('TURISMO')) assignedColor = colorMapping["TURISMO"];
+                    else if (parentName.includes('HUB')) assignedColor = colorMapping["HUB DE ATIVAÇÃO"];
+                    else if (parentName.includes('NAVE')) assignedColor = colorMapping["NAVE DECOLA"];
+                    else if (parentName.includes('ECONOMIA') || parentName.includes('CRIATIVA')) assignedColor = colorMapping["ECONOMIA CRIATIVA"];
+                    else if (parentName.includes('EMPRESA') || parentName.includes('STARTUP')) assignedColor = colorMapping["EMPRESAS E STARTUPS"];
+
+                    entity.billboard.image = createNeonPinCanvas(assignedColor);
+                    entity.customCategory = parentName;
+                }
+            }
+            
+            // Ativar visão padrão 3D
+            triggerDefaultView(viewer);
+
+        } catch (error) {
+            console.error("Erro ao carregar o KML:", error);
+        }
+
+        // --- FUNÇÃO DE VISUALIZAÇÃO PADRÃO COM INCLINAÇÃO 3D (45 GRAUS) ---
+        function triggerDefaultView(v = viewer) {
+            v.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(-43.3200, -23.0500, 35000), // Posição recuada
+                orientation: {
+                    heading: Cesium.Math.toRadians(0.0), // Virado para o Norte
+                    pitch: Cesium.Math.toRadians(-45.0),  // INCLINAÇÃO EM 45° PARA EXIBIR RELEVO 3D
+                    roll: 0.0
+                },
+                duration: 2.0
+            });
+        }
+
+        // --- EVENTOS DOS BOTÕES DA INTERFACE ---
+        document.getElementById('btn-default-view').addEventListener('click', () => triggerDefaultView(viewer));
+
+        document.getElementById('btn-zoom-in').addEventListener('click', () => {
+            viewer.camera.zoomIn(viewer.camera.positionCartographic.height * 0.3);
+        });
+        document.getElementById('btn-zoom-out').addEventListener('click', () => {
+            viewer.camera.zoomOut(viewer.camera.positionCartographic.height * 0.3);
+        });
+        document.getElementById('btn-location').addEventListener('click', () => {
+            viewer.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(-43.1800, -22.9100, 8000),
+                orientation: { heading: 0.0, pitch: Cesium.Math.toRadians(-35), roll: 0.0 }
+            });
+        });
+
+        // Lógica de Filtros
+        document.getElementById('btn-apply-filters').addEventListener('click', () => {
+            if (!globalKmlDataSource) return;
+
+            const checkedCheckboxes = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(cb => cb.value);
+            const selectedPolo = document.querySelector('.filter-radio:checked').value;
+            const entities = globalKmlDataSource.entities.values;
+
+            entities.forEach(entity => {
+                if (Cesium.defined(entity.billboard)) {
+                    const category = entity.customCategory || '';
+                    let matchesCategory = false;
+
+                    if (category.includes('INDUSTRIA') && checkedCheckboxes.includes('INDÚSTRIA')) matchesCategory = true;
+                    else if (category.includes('INFRAESTRUTURA') && checkedCheckboxes.includes('INFRAESTRUTURA')) matchesCategory = true;
+                    else if ((category.includes('ACELERADORAS') || category.includes('INVESTIDORES')) && checkedCheckboxes.includes('ACELERADORAS E INVESTIDORES')) matchesCategory = true;
+                    else if (category.includes('ACADEMICO') && checkedCheckboxes.includes('ACADÊMICO')) matchesCategory = true;
+                    else if (category.includes('GOVERNAMENTAL') && checkedCheckboxes.includes('GOVERNAMENTAL')) matchesCategory = true;
+                    else if (category.includes('TURISMO') && checkedCheckboxes.includes('TURISMO')) matchesCategory = true;
+                    else if (category.includes('HUB') && checkedCheckboxes.includes('HUB DE ATIVAÇÃO')) matchesCategory = true;
+                    else if (category.includes('NAVE') && checkedCheckboxes.includes('NAVE DECOLA')) matchesCategory = true;
+                    else if ((category.includes('ECONOMIA') || category.includes('CRIATIVA')) && checkedCheckboxes.includes('ECONOMIA CRIATIVA')) matchesCategory = true;
+                    else if ((category.includes('EMPRESA') || category.includes('STARTUP')) && checkedCheckboxes.includes('EMPRESAS E STARTUPS')) matchesCategory = true;
+
+                    let matchesPolo = true;
+                    if (selectedPolo !== 'TODOS' && entity.position) {
+                        const cartesianPosition = entity.position.getValue(Cesium.JulianDate.now());
+                        if (cartesianPosition) {
+                            const cartographic = Cesium.Cartographic.fromCartesian(cartesianPosition);
+                            const lon = Cesium.Math.toDegrees(cartographic.longitude);
+                            const lat = Cesium.Math.toDegrees(cartographic.latitude);
+
+                            if (selectedPolo === 'PORTO MARAVILHA') {
+                                matchesPolo = (lon >= -43.215 && lon <= -43.185 && lat >= -22.905 && lat <= -22.885);
+                            } else if (selectedPolo === 'CENTRO') {
+                                matchesPolo = (lon >= -43.195 && lon <= -43.170 && lat >= -22.918 && lat <= -22.898);
+                            }
                         }
                     }
+
+                    entity.show = (matchesCategory && matchesPolo);
                 }
-
-                entity.show = (matchesCategory && matchesPolo);
-            }
+            });
         });
-    });
 
-    // Controladores dos botões de navegação
-    document.getElementById('btn-default-view').addEventListener('click', triggerDefaultView);
-
-    document.getElementById('btn-zoom-in').addEventListener('click', () => {
-        viewer.camera.zoomIn(viewer.camera.positionCartographic.height * 0.3);
-    });
-    document.getElementById('btn-zoom-out').addEventListener('click', () => {
-        viewer.camera.zoomOut(viewer.camera.positionCartographic.height * 0.3);
-    });
-    document.getElementById('btn-location').addEventListener('click', () => {
-        // Localiza de volta na região central do Rio de Janeiro
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(-43.2044, -22.9100, 20000),
-            orientation: { heading: 0.0, pitch: Cesium.Math.toRadians(-45), roll: 0.0 }
+        // Carregar ícones do Material Symbols
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            const iconName = icon.getAttribute('data-icon');
+            if(iconName) icon.textContent = iconName;
         });
-    });
+    }
 
-    // Inicialização simples dos ícones do Material Symbols
-    document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-        const iconName = icon.getAttribute('data-icon');
-        if(iconName) icon.textContent = iconName;
-    });
+    // Executar inicialização
+    initCesium();
 </script>
-</body>
-</html>
