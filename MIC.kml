@@ -13,7 +13,7 @@
         <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
       </IconStyle>
       <LabelStyle>
-        <scale>0</scale>
+        <scale>0  </scale>
       </LabelStyle>
     </Style>
     <Style id="icon-1899-0288D1-highlight">
@@ -79,6 +79,42 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-7CB342-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="icon-1899-7CB342-nodesc-normal">
@@ -399,17 +435,78 @@
         <styleUrl>#icon-1899-FF5252-nodesc-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="poly-0288D1-1200-77-nodesc-normal">
+      <LineStyle>
+        <color>ffd18802</color>
+        <width>1.2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4dd18802</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="poly-0288D1-1200-77-nodesc-highlight">
+      <LineStyle>
+        <color>ffd18802</color>
+        <width>1.8</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4dd18802</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="poly-0288D1-1200-77-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#poly-0288D1-1200-77-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#poly-0288D1-1200-77-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="poly-FF5252-1200-77-normal">
+      <LineStyle>
+        <color>ff5252ff</color>
+        <width>1.2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4d5252ff</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+    </Style>
+    <Style id="poly-FF5252-1200-77-highlight">
+      <LineStyle>
+        <color>ff5252ff</color>
+        <width>1.8</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4d5252ff</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+    </Style>
+    <StyleMap id="poly-FF5252-1200-77">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#poly-FF5252-1200-77-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#poly-FF5252-1200-77-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Folder>
       <name>INDUSTRIA</name>
-      <Placemark>
-        <name>Parque Tecnológico da UFRJ</name>
-        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -43.2188511,-22.8649891,0
-          </coordinates>
-        </Point>
-      </Placemark>
       <Placemark>
         <name>Distrito Industrial de Santa Cruz</name>
         <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
@@ -591,6 +688,39 @@
           </coordinates>
         </Point>
       </Placemark>
+      <Placemark>
+        <name>Parque Tecnológico UFRJ</name>
+        <styleUrl>#poly-0288D1-1200-77-nodesc</styleUrl>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <tessellate>1</tessellate>
+              <coordinates>
+                -43.218605,-22.8658096,0
+                -43.2173175,-22.8676879,0
+                -43.2165021,-22.8676484,0
+                -43.2154936,-22.869408,0
+                -43.2146782,-22.8693487,0
+                -43.2143563,-22.8686765,0
+                -43.2144422,-22.8662841,0
+                -43.2153005,-22.8636347,0
+                -43.2176608,-22.8650978,0
+                -43.2178969,-22.8648408,0
+                -43.218605,-22.8658096,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>Serratec - Parque Tecnológico Região Serrana</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2092014,-22.5321123,0
+          </coordinates>
+        </Point>
+      </Placemark>
     </Folder>
     <Folder>
       <name>INFRAESTRUTURA</name>
@@ -667,11 +797,11 @@
       </Placemark>
       <Placemark>
         <name>Porto Sudeste do Brasil S.A</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwuV_VAJrSqs6sRzUUngocLADhR8mQm8qyms771YZIUDADrPEq45iLwbGMLP7kN5jvk1YWWyzd-CRNYmaO90tqf0Nrq5TJ4WVsMMd4OS3D66PNgnIUP8YzTNdrUcR2HsuOiN6MDyEmpozEEF4WfL7e_zEle8NNrlEGvDgDQyOfhl2XkWcMt-mdVD2Gsz9y7h3WPFs6WxeGkyjPx9gijLN5mHl7qx5Rygem6wYTXLfrMzdsVQhgL3zYFhYQ?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Maior porto de minério de ferro do mundo — operado pela Vale com capacidade de 100 M ton/ano e terminais graneleiros de última geração. Hub logístico global que conecta o interior do país ao mercado internacional via Baía de Sepetiba.]]></description>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4OigQpxkZQudkIlrlDOSUogPV7R_ya4cTM_c0nBLqzWcKd9iGkYV1DPkeHfe6hoJrfhI3NziinoGmB9ehLnXyqqRFaqunMzcw9ffWWoqSg3bH2JVDeycdYlJI6Sxaq8u0uESq-BhaiYmEDcJlKujtjURds94hgggI83A-9F6dHj2eE1TFyZZX2NiH0RCmoOM78pDF3ul1ZLGhUsxqEV3RCYPT86mwmgLC5QFVYbu5fTkMQkX3CZRhLKuM?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Maior porto de minério de ferro do mundo — operado pela Vale com capacidade de 100 M ton/ano e terminais graneleiros de última geração. Hub logístico global que conecta o interior do país ao mercado internacional via Baía de Sepetiba.]]></description>
         <styleUrl>#icon-1899-F9A825</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GwuV_VAJrSqs6sRzUUngocLADhR8mQm8qyms771YZIUDADrPEq45iLwbGMLP7kN5jvk1YWWyzd-CRNYmaO90tqf0Nrq5TJ4WVsMMd4OS3D66PNgnIUP8YzTNdrUcR2HsuOiN6MDyEmpozEEF4WfL7e_zEle8NNrlEGvDgDQyOfhl2XkWcMt-mdVD2Gsz9y7h3WPFs6WxeGkyjPx9gijLN5mHl7qx5Rygem6wYTXLfrMzdsVQhgL3zYFhYQ?authuser=0&fife=s16383]]></value>
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR4OigQpxkZQudkIlrlDOSUogPV7R_ya4cTM_c0nBLqzWcKd9iGkYV1DPkeHfe6hoJrfhI3NziinoGmB9ehLnXyqqRFaqunMzcw9ffWWoqSg3bH2JVDeycdYlJI6Sxaq8u0uESq-BhaiYmEDcJlKujtjURds94hgggI83A-9F6dHj2eE1TFyZZX2NiH0RCmoOM78pDF3ul1ZLGhUsxqEV3RCYPT86mwmgLC5QFVYbu5fTkMQkX3CZRhLKuM?authuser=0&fife=s16383]]></value>
           </Data>
         </ExtendedData>
         <Point>
@@ -682,11 +812,11 @@
       </Placemark>
       <Placemark>
         <name>PORTO RIO DE JANEIRO</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GyRC0dYKl8jTA4kcFXC5c5x_a5mGt5I_3CA5no5j8wKg4mpf_2pDAOslYBt2up_bLT4X-StYlCTisWM69FyrJGYUqSxe6PvwINTM-bHqzgdSXJGMMusw1iUOjvy1Wq3Y5ofKUzRzdHbeXPrnBaWzbRAER3i3qbR-45avGgKZG34wDNrSfc3riLGgeaTmMQJSsNTnd1RMF6gf6k_FvdpL-3JyMYlf6bzbXrGyRNEu39LyY4Ts1uWTf8U1Zc?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Porto principal da cidade em modernização acelerada. Gateway de importação e exportação para o Centro-Sul, com foco em cargas especiais, terminais de contêineres e economia circular portuária. Integrado ao projeto Porto Maravilha de revitalização urbana e digital.]]></description>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR61TduIDnMKfd89_PtaJyU01ogH2Y8yr6mlMeoLx6MST2W24Px_eAi0nrrlh0C_7onq-BCMbgn9TWJ1q6TXB51ggW3SyxZV7SXIa_21csrukN_NP31-80nYYT82LOsuwaj63ha_0rDSDOspo5vDXv4tR-xF1BB3j8V9u-A6wfdhJFR3e78NtrspiPecYG5GVF5bZLDuw40ISfLytDXS4WNi0hbWKEbkMRMeW3EtFgC4lYA9TtmXl0gW0z8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>Porto principal da cidade em modernização acelerada. Gateway de importação e exportação para o Centro-Sul, com foco em cargas especiais, terminais de contêineres e economia circular portuária. Integrado ao projeto Porto Maravilha de revitalização urbana e digital.]]></description>
         <styleUrl>#icon-1899-F9A825</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_GyRC0dYKl8jTA4kcFXC5c5x_a5mGt5I_3CA5no5j8wKg4mpf_2pDAOslYBt2up_bLT4X-StYlCTisWM69FyrJGYUqSxe6PvwINTM-bHqzgdSXJGMMusw1iUOjvy1Wq3Y5ofKUzRzdHbeXPrnBaWzbRAER3i3qbR-45avGgKZG34wDNrSfc3riLGgeaTmMQJSsNTnd1RMF6gf6k_FvdpL-3JyMYlf6bzbXrGyRNEu39LyY4Ts1uWTf8U1Zc?authuser=0&fife=s16383]]></value>
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR61TduIDnMKfd89_PtaJyU01ogH2Y8yr6mlMeoLx6MST2W24Px_eAi0nrrlh0C_7onq-BCMbgn9TWJ1q6TXB51ggW3SyxZV7SXIa_21csrukN_NP31-80nYYT82LOsuwaj63ha_0rDSDOspo5vDXv4tR-xF1BB3j8V9u-A6wfdhJFR3e78NtrspiPecYG5GVF5bZLDuw40ISfLytDXS4WNi0hbWKEbkMRMeW3EtFgC4lYA9TtmXl0gW0z8?authuser=0&fife=s16383]]></value>
           </Data>
         </ExtendedData>
         <Point>
@@ -697,11 +827,11 @@
       </Placemark>
       <Placemark>
         <name>Supercomputador Harpia</name>
-        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw3mHlAIePMf1cSQIKCJ6XZ9ZlklnkoYMMwTR3sjmD02yC_YMhe5VnAkaFc_26ylRZaS7uC6c84z_VWLNbq00v-QPxbH0RxZpBDFYGIQzALmaUaxATvGtsEvCZVqMFXjxDrscOG6RJl_YaApoAQhvhaOK-YD3kDY7E6QyawPiK0hluQ_4xQcZ3myNLXd_Vw7jSYYZQMnsrR_bP0Pt9dD0fJb_uPCMQwErSaVjXlPxJWLVhFldzHVHGzi7k?authuser=0&fife=s16383" height="200" width="auto" /><br><br>A Harpia, da Petrobras, é o 36º computador de maior desempenho do mundo inteiro. O equipamento tem capacidade de 146 Pflops — ou seja, realiza 146 quatrilhões de operações por segundo.A máquina, equivalente a 10 milhões de celulares ou 200 mil notebooks, contribuirá para que a companhia mantenha a liderança em capacidade de processamento na América Latina. O novo HPC, High Perfomance Computer, é utilizado pelos geofísicos da Petrobras para processar dados sísmicos brutos e transformá-los em imagens detalhadas do subsolo. <br><br><a href="https://www.youtube.com/watch?v=byVELQgjd3o"><img src="https://img.youtube.com/vi/byVELQgjd3o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/byVELQgjd3o">https://www.youtube.com/embed/byVELQgjd3o</a>]]></description>
+        <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5cp2La1Wb_OgbKf3vQuFU_JVevelRQgai1fw_xOSxf4oavLwgndG9fcNsN7_iCVpbk3qk0Y0XJQm_x2cO8y5ylMDPwl6PxeX-jp2eAl2k1y5743c0sjKjttJkcXmmP-dt5G-4On6BBdLS1MMIZHbH7GDNFiaXA2G_AyVKSV6RyuM7yoGeecG_OeFd8JkuYBF6OV6l0fNvoppqj0zctxZsedNze78UIZWUAi9DLNvpargnjEFAfAVrKuJs?authuser=0&fife=s16383" height="200" width="auto" /><br><br>A Harpia, da Petrobras, é o 36º computador de maior desempenho do mundo inteiro. O equipamento tem capacidade de 146 Pflops — ou seja, realiza 146 quatrilhões de operações por segundo.A máquina, equivalente a 10 milhões de celulares ou 200 mil notebooks, contribuirá para que a companhia mantenha a liderança em capacidade de processamento na América Latina. O novo HPC, High Perfomance Computer, é utilizado pelos geofísicos da Petrobras para processar dados sísmicos brutos e transformá-los em imagens detalhadas do subsolo. <br><br><a href="https://www.youtube.com/watch?v=byVELQgjd3o"><img src="https://img.youtube.com/vi/byVELQgjd3o/hqdefault.jpg" height="200" width="auto" /></a><br><br><a href="https://www.youtube.com/embed/byVELQgjd3o">https://www.youtube.com/embed/byVELQgjd3o</a>]]></description>
         <styleUrl>#icon-1899-F9A825</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AE5a_Gw3mHlAIePMf1cSQIKCJ6XZ9ZlklnkoYMMwTR3sjmD02yC_YMhe5VnAkaFc_26ylRZaS7uC6c84z_VWLNbq00v-QPxbH0RxZpBDFYGIQzALmaUaxATvGtsEvCZVqMFXjxDrscOG6RJl_YaApoAQhvhaOK-YD3kDY7E6QyawPiK0hluQ_4xQcZ3myNLXd_Vw7jSYYZQMnsrR_bP0Pt9dD0fJb_uPCMQwErSaVjXlPxJWLVhFldzHVHGzi7k?authuser=0&fife=s16383 https://www.youtube.com/embed/byVELQgjd3o]]></value>
+            <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3AAjQbR5cp2La1Wb_OgbKf3vQuFU_JVevelRQgai1fw_xOSxf4oavLwgndG9fcNsN7_iCVpbk3qk0Y0XJQm_x2cO8y5ylMDPwl6PxeX-jp2eAl2k1y5743c0sjKjttJkcXmmP-dt5G-4On6BBdLS1MMIZHbH7GDNFiaXA2G_AyVKSV6RyuM7yoGeecG_OeFd8JkuYBF6OV6l0fNvoppqj0zctxZsedNze78UIZWUAi9DLNvpargnjEFAfAVrKuJs?authuser=0&fife=s16383 https://www.youtube.com/embed/byVELQgjd3o]]></value>
           </Data>
         </ExtendedData>
         <Point>
@@ -991,18 +1121,46 @@
           </coordinates>
         </Point>
       </Placemark>
-    </Folder>
-    <Folder>
-      <name>Acadêmico</name>
       <Placemark>
-        <name>Universidade Federal do Rio de Janeiro</name>
-        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <name>Cidade das Artes</name>
+        <styleUrl>#icon-1899-FF5252-nodesc</styleUrl>
         <Point>
           <coordinates>
-            -43.2151914,-22.8674532,0
+            -43.3657976,-22.9991557,0
           </coordinates>
         </Point>
       </Placemark>
+      <Placemark>
+        <name>Rio 2C</name>
+        <styleUrl>#icon-1899-FF5252-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3653073,-22.9988298,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pier Mauá</name>
+        <description>Principal porta de entrada do turismo marítimo no Rio de Janeiro e um dos maiores centros de eventos da América Latina, o Pier Mauá administra uma infraestrutura estratégica de 70 mil m² no coração do Porto Maravilha. A concessionária é responsável pela gestão do Terminal Internacional de Cruzeiros, do Prédio do Touring e do Espaço Mauá, além de cinco armazéns históricos do século XIX (com 3.500 m² cada) e um espaço para convenções de 8.500 m² localizado em pleno Boulevard Olímpico. A organização destaca-se na economia criativa ao atuar como o principal palco para eventos globais de inovação e cultura, como a Rio Innovation Week e a ArtRio, consolidando a região portuária como um hub de convergência tecnológica e artística. O empreendimento possui alcance global, servindo como vitrine internacional para a produção criativa carioca e como ponto estratégico de conectividade urbana, turística e econômica.</description>
+        <styleUrl>#poly-FF5252-1200-77</styleUrl>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <tessellate>1</tessellate>
+              <coordinates>
+                -43.1907649,-22.892706,0
+                -43.1844027,-22.8950583,0
+                -43.1841238,-22.8945444,0
+                -43.1905825,-22.8922118,0
+                -43.1907649,-22.892706,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Acadêmico</name>
       <Placemark>
         <name>UFRJ - Campus Duque de Caxias Professor Geraldo Cidade</name>
         <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
@@ -1247,8 +1405,9 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>ESPM - Villa Aymoré</name>
-        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <name>ESPM - Escola Superior de Propaganda e Marketing</name>
+        <description><![CDATA["A ESPM nasceu em 1951, quando um grupo de publicitários e empresários da mídia, liderados por Rodolfo Lima Martensen e apoiados pelo então diretor do Masp, Pietro Maria Bardi e pelo lendário Assis Chateaubriand, teve a visão de que somente com uma escola de excelência teríamos no Brasil uma indústria da comunicação forte e desenvolvida.<br>Foi da grandeza desse ideal de nossos fundadores que a ESPM foi criada, pelo mercado e para o mercado. A escola na qual, desde sempre, “Ensina quem faz”.<br>Ao longo dos anos, sob a direção de Martensen, Otto Hugo Scherb, Francisco Gracioso, Luiz Celso de Piratininga e José Roberto Whitaker Penteado, a ESPM chegou aos dias atuais com campi em São Paulo, Rio de Janeiro, Porto Alegre e Florianópolis, com cerca de 12 mil estudantes e 863 professores, 9 cursos de graduação, pós, mestrados, doutorados. O Laboratório de Economia Criativa (LEC) e o Laboratório de Cidades Criativas (LCC) da ESPM-Rio já realizaram parcerias com a Secretaria Municipal de Cultura do Rio de Janeiro para desenvolver projetos culturais e criativos, incluindo o fortalecimento de lonas e arenas culturais, como no Centro Municipal de Referência da Música Carioca."]]></description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
         <Point>
           <coordinates>
             -43.1761755,-22.9218063,0
@@ -1306,6 +1465,15 @@
         <Point>
           <coordinates>
             -43.2097965,-22.926352,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>UFRJ </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.230462,-22.8577103,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1681,6 +1849,474 @@
         <Point>
           <coordinates>
             -43.240528,-22.903681,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Turismo</name>
+      <Placemark>
+        <name>Cristo Redentor</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2104872,-22.951916,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>AquaRio</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1921598,-22.89332,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yup Star: Roda Gigante do Rio de Janeiro</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1942285,-22.8930743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>RIOTUR - Empresa de Turismo do Município do Rio de Janeiro S.A.</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2062905,-22.9122793,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pão de Açúcar</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1545757,-22.9492586,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Praia de Copacabana</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.18531,-22.9738729,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pedra do Arpoador</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1909875,-22.9903829,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Lage</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2127151,-22.961123,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Nacional da Tijuca</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2799308,-22.9560998,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Quinta da Boa Vista</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2217854,-22.9051942,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>BioParque do Rio</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2289773,-22.9043309,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jardim Botânico</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2219164,-22.9692345,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sítio Roberto Burle Marx - IPHAN</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.5469176,-23.0230317,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pedra da Gávea</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2847223,-22.9978723,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pedra Bonita</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2786111,-22.9872222,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Madureira Mestre Monarco</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3432227,-22.866076,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque Natural Municipal do Gericinó Prefeito Farid Abrão</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.4322565,-22.8171243,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro de Tradições Nordestinas de São Gonçalo</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.0990395,-22.8532026,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arcos da Lapa | Aqueduto da Carioca</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1798573,-22.9126382,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Acelerador/Investidor</name>
+      <Placemark>
+        <name>Firjan - Federação das Indústrias do Estado do Rio de Janeiro</name>
+        <description>Federação das Indústrias do Estado do Rio de Janeiro — representa 101 sindicatos industriais. A Firjan é o cérebro estratégico que articula o desenvolvimento econômico do Rio. Atuando em parceria direta com a Prefeitura na formulação de políticas públicas, a federação é responsável por estudos de vanguarda que orientam a competitividade urbana e a atração de investimentos. É o elo fundamental entre as demandas do setor produtivo e o planejamento de longo prazo da capital.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.174028,-22.9102318,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Invest.Rio</name>
+        <description><![CDATA["A Invest.Rio é a agência de promoção e atração de investimentos da cidade do Rio. A nossa missão é ser o maior polo indutor de novos negócios do país e tornar o Rio a capital da inovação na América Latina. Portanto, nos dedicamos a fomentar o ecossistema de negócios da cidade e a apoiar conexões, projetos e eventos que dão mais visibilidade global e atraem mais oportunidades para quem trabalha e investe na cidade.<br>Atua como porta de entrada para empresas que pretendem se instalar ou investir em sua expansão na capital fluminense. Também fornece informações estratégicas que ajudam os investidores a encontrar o melhor local para o sucesso dos seus negócios. Algumas politicas de incentivos são ISS Tech com redução do ISS de 5% para 2% para empresas que exercem atividades relacionadas ao setor da tecnologia e estão localizadas no Porto Maravalley e no Parque Tecnológico do Rio, na Ilha do Fundão. Hub de data centers , que prevê o benefício fiscal de diferimento do ICMS para data centers localizados no Estado do Rio de Janeiro em operações de importação de equipamentos destinados à integração no ativo permanente do estabelecimento. Além da participação ativa em grandes eventos como Réveillon em Copacabana, Carnaval, Web Summit Rio, Sahic, Routes Americas, Smart Summit, Turismall, Todo Mundo no Rio, Rio 2C, Lawtech Experience, Energy Summit, Rio Innovation Week, Blockchain Rio, Rio Oil & Gas"]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1868954,-22.8952424,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sebrae Regional Rio I</name>
+        <description><![CDATA["O Sebrae apoia as pequenas empresas em todo o Brasil oferecendo orientação, capacitação e soluções para quem quer empreender. Mais do que uma instituição, somos parceiros de quem quer transformar ideias em negócios. +920.000 pequenos negócios impactados +4.800 pontos de atendimento em todo Brasil +60.000.000 de atendimentos realizados em 2025. A Regional Rio de Janeiro I do Sebrae RJ é uma importante unidade que abrange os bairros do Centro, Zona Sul e Grande Tijuca, totalizando um conjunto de 37 bairros na cidade do Rio de Janeiro. Com um foco predominante no setor de serviços, mas também atendendo aos setores de comércio e indústria, nossa unidade regional se destaca por oferecer assessoria de negócios abrangente para todos os pequenos empreendedores da região.<br>O objetivo é apoiar aqueles que desejam iniciar e desenvolver suas atividades comerciais no território, fornecendo acesso a consultorias especializadas e treinamentos de mercado. Além disso, disponibilizamos um espaço físico que está aberto à comunidade e ao ecossistema empreendedor local, para a realização de ações que promovam agendas positivas para as micro e pequenas empresas. Hub empreendedor do Sistema Sebrae no Rio — suporta 200.000+ MPEs no estado. Promove o In.Rio (metodologia ELI para ecossistemas locais de inovação) e conecta empreendedores populares ao tech, ao capital e a mercados internacionais. "]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1702246,-22.9091875,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CIRJ - Centro Industrial do Rio de Janeiro</name>
+        <description>O CIRJ é a plataforma de conexão que reúne o empresariado carioca em torno de um objetivo comum: o crescimento do ambiente de negócios. Atuando como uma rede viva de cooperação, facilita o diálogo entre a Prefeitura e os CNPJs que movem a economia local. É o espaço onde parcerias público-privadas ganham tração, promovendo um ambiente de negócios fértil e colaborativo para as empresas que escolhem o Rio de Janeiro como sede.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1737102,-22.9109655,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fundação de Amparo à Pesquisa do Estado do Rio de Janeiro</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.173711,-22.9046549,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Finep - Financiadora de Estudos e Projetos</name>
+        <description>A Finep concede recursos reembolsáveis e não-reembolsáveis a instituições de pesquisa e empresas brasileiras. O apoio da Finep abrange todas as etapas e dimensões do ciclo de desenvolvimento científico e tecnológico: pesquisa básica, pesquisa aplicada, inovações e desenvolvimento de produtos, serviços e processos. A Finep apoia, ainda, a incubação de empresas de base tecnológica, a implantação de parques tecnológicos, a estruturação e consolidação dos processos de pesquisa, o desenvolvimento e a inovação em empresas já estabelecidas, e o desenvolvimento de mercados.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1749054,-22.9323593,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>AgeRio - Agência Estadual de Fomento</name>
+        <description>A Agência tem como objetivo principal estimular o desenvolvimento econômico do Estado do Rio de Janeiro, levando como pilares essenciais a responsabilidade socioambiental e as boas práticas de governança. A AgeRio apoia projetos de todos os portes, dos microempreendedores à grande empresa, através de recursos próprios e repasses de linhas de crédito de instituições parceiras</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.175234,-22.910987,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>BNDES - Banco Nacional de Desenvolvimento Econômico e Social</name>
+        <description><![CDATA["Banco Nacional de Desenvolvimento Econômico e Social (BNDES), fundado em 20 de junho de 1952, uma empresa pública federal vinculada ao Ministério do Desenvolvimento, Indústria, Comércio e Serviços, sendo o principal instrumento do Governo Federal,único acionista, para financiamento de longo prazo e investimento nos diversos segmentos da economia brasileira. <br>O Sistema BNDES é formado por três empresas: o BNDES e suas subsidiárias – a BNDES Participações S.A. (BNDESPAR), que atua no mercado de capitais, e a Agência Especial de Financiamento Industrial (FINAME), dedicada ao fomento da produção e da comercialização de máquinas e equipamentos."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1796246,-22.908606,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MSW Capital</name>
+        <description><![CDATA[A MSW Capital é uma gestora carioca referência em Corporate Venture Capital (CVC) que atua como um elo estratégico entre grandes corporações e o ecossistema de Inteligência Artificial. A entidade utiliza sua expertise financeira para investir em startups que aplicam Aprendizado de Máquina (Machine Learning/Deep Learning) e IA Generativa (LLMs) para resolver desafios estruturais de grandes players brasileiros. Seu diferencial competitivo reside no modelo de "plano de impulso", onde a gestora não apenas provê capital, mas integra tecnologias de IA das investidas às unidades de negócio das corporações cotistas, acelerando a transformação digital e a eficiência analítica no mercado nacional.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1761896,-22.9572162,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gávea Angels - Rede de investidores anjos</name>
+        <description><![CDATA[A Gávea Angels é uma das pioneiras redes de investimento-anjo do Brasil, sediada no Rio de Janeiro, atuando como um pilar de Apoio e Governança para o ecossistema de inovação. A associação desempenha um papel crítico no desenvolvimento da Inteligência Artificial no estado, ao identificar, mentorar e aportar capital em startups de estágio inicial (early stage) que utilizam IA para resolver problemas complexos. Com uma tese de investimento fortemente voltada para tecnologias disruptivas, a Gávea Angels conecta empreendedores fluminenses a investidores experientes, facilitando o acesso ao "Smart Money" necessário para escalar soluções de Aprendizado de Máquina (Machine Learning/Deep Learning) e Data Science. Sua atuação fortalece a densidade de capital no Rio de Janeiro, garantindo que o estado não apenas produza ciência, mas também transforme algoritmos em negócios viáveis e escaláveis.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2328978,-22.9782973,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[MJV Technology & Innovation]]></name>
+        <description><![CDATA[A MJV Technology & Innovation é uma consultoria global que atua na fronteira da transformação digital, utilizando a Inteligência Artificial como diferencial competitivo para otimizar modelos de negócio complexos. A empresa integra metodologias como Design Thinking e Agile com tecnologias de ponta, incluindo Aprendizado de Máquina (Machine Learning/Deep Learning), IA Generativa (LLMs) e Visão Computacional, para entregar soluções que variam de automação de processos financeiros à análise avançada de dados para o setor farmacêutico e de energia. Sua presença no ecossistema do Rio de Janeiro é reforçada pelo MJV Lab na UFRJ, onde realiza P&D em colaboração com a academia, conectando o estado da arte da ciência de dados às necessidades reais de grandes corporações globais.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.169083,-22.9095943,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>EMBRAPII</name>
+        <description><![CDATA["A Empresa Brasileira de Pesquisa e Inovação Industrial (Embrapii) conecta o conhecimento científico da sua Rede de Unidades com a indústria por meio de um modelo ágil, flexível, de baixa burocracia e com o investimento de recursos não reembolsáveis.<br>A Rede de Unidades Embrapii é formada por Instituições de Ciência e Tecnologia (ICT) públicas e privadas credenciadas para atender as demandas de inovação da indústria. Além de disponibilizar o conhecimento científico por meio de suas Unidades, a Embrapii compartilha os custos dos projetos com as empresas aportando recursos não reembolsáveis. No Rio as unidades que conectam a rede são COPPE focada em Engenharia de Petróleo, Gás e Energias Renováveis, INT em Tecnologia Química Industrial, PROMEXBIO-CETEM com Tecnologia Mineral, SENAI ISI BIOSSINTÉTICOS na Inovação em biossintéticos, fibras e intensificação de processos químicos, SENAI ISI QUÍMICA VERDE em Tecnologias em química verde e TECGRAF com Soluções computacionais em engenharia."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2183779,-22.8648489,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>XP Investimentos</name>
+        <description>A XP Investimentos é uma das maiores instituições financeiras e plataformas de investimentos do Brasil, atuando há mais de 20 anos na democratização do acesso ao mercado financeiro por meio de assessoria especializada, educação financeira, produtos de investimento e soluções patrimoniais. Integrante da XP Inc., a companhia oferece serviços de renda fixa, ações, fundos, previdência, seguros, crédito e gestão de patrimônio, com foco em inovação financeira, tecnologia e experiência do investidor. Entre seus principais números, a empresa possui mais de 3 milhões de clientes ativos, mais de US$ 130 bilhões sob custódia, mais de 8 mil assessores distribuídos em cerca de 800 escritórios, além de mais de 500 mil alunos formados pela XP Educação. A XP também se consolidou como uma das fintechs mais relevantes da América Latina, tendo realizado um dos maiores IPOs brasileiros da Nasdaq, captando aproximadamente US$ 2,25 bilhões.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2175127,-22.9841261,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Equity Rio</name>
+        <description><![CDATA[A Equity Rio consolida-se como um ecossistema inovador de investimento e governança que integra Inteligência Artificial Generativa (LLMs) e fluxos de prompts estruturados para otimizar a operação e o fundraising de startups e PMEs. Destacando-se pela oferta pioneira de ativos de Renda Fixa Digital da economia real e serviços estratégicos como o CFO As A Service, a entidade promove uma abordagem "pró-founder" que combina mentoria individualizada com uma rigorosa estruturação de governança e Data Rooms. Ao atuar como um agente conector e "feeder" estratégico, a Equity Rio fornece a camada tecnológica e o suporte operacional necessários para transformar negócios de alto impacto em empresas altamente escaláveis e preparadas para o mercado global de Venture Capital.]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3085662,-23.0062406,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Riosoft</name>
+        <description>A RioSoft atua como o principal elo de governança tecnológica no Rio de Janeiro, operando sob o modelo de Tripla Hélice para integrar de forma estratégica empresas, governo e academia em prol da inovação. Com um papel pioneiro na promoção da Inteligência Artificial Responsável, a organização lidera iniciativas como o INOVA IA 2025 e o desenvolvimento do Mapa 2.0 da TI, uma plataforma de inteligência de dados que fornece radiografias socioeconômicas precisas para nortear investimentos e políticas públicas. Além de facilitar o acesso a editais de fomento e neoindustrialização da FINEP, a RioSoft diferencia-se por incorporar métricas de ESG e programas de inclusão digital geracional, assegurando que a expansão do setor de software fluminense seja pautada pela ética, pela conformidade técnica e pelo impacto social sustentável.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.178791,-22.9025237,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Base.Rio - ESPM</name>
+        <description><![CDATA["Base.Rio, uma aceleradora, voltada ao desenvolvimento de startups e negócios criativos, no Rio de Janeiro. A iniciativa expande para a cidade um modelo já consolidado pela instituição em São Paulo para reforçar seu o avanço no setor de inovação e tecnologia.<br>A proposta é é desenvolver programas flexíveis capazes de transformar ideias em soluções de impacto. A metodologia combina mentorias, oficinas práticas e acompanhamento contínuo, e atuar em dois níveis: pré-aceleração, voltada a projetos em estágio inicial, e aceleração, direcionada a startups com MVP ou operação mais estruturada."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1761755,-22.9218063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>GENESIS - PUC</name>
+        <description><![CDATA["Fundado em 1997, o Instituto Gênesis é a unidade da PUC-Rio responsável pela transferência de tecnologia e pelo fomento ao empreendedorismo. Reconhecido internacionalmente, já tendo sido eleito pela UBI Global como uma das melhores incubadoras vinculadas a universidades do mundo, o Gênesis atua na fronteira entre a academia e o setor produtivo.<br>Oferece suporte completo (jurídico, de marketing, financeiro e de networking) para que startups baseadas em tecnologia sobrevivam ao ""valle da morte"" inicial e ganhem escala.<br>Promove a disciplina de empreendedorismo para todos os cursos da PUC-Rio, garantindo que o conhecimento técnico seja sempre aliado à visão de negócio.<br>Conecta grandes corporações (como Petrobras, Vale e Shell) a soluções ágeis criadas por suas startups incubadas, acelerando a resolução de problemas complexos da indústria. <br>409 EMPREENDEDORES fazem parte da rede.<br>46 EMPRESAS incubadas, germinadas e pós-incubadas.<br>45 CONSULTORES prontos pra orientar, mentorar e ajudar.<br>33 EVENTOS CURSOS E PALESTRAS que movimentaram nossa rede, totalizando mais de 1830 participações."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2337317,-22.9783392,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Petrobras Innovation Ventures
+</name>
+        <description>Fundo de Capital de Risco Corporativo da Petrobras, focado em aportes em startups de transição energética, deep techs industriais e eficiência digital em operações complexas.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1815645,-22.909237,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vale Ventures</name>
+        <description>Fundo de CVC corporativo da Vale voltado para investimento em descarbonização, mineração sustentável, inteligência artificial aplicada e novas tecnologias de materiais.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1796166,-22.9412153,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crescera Capital</name>
+        <description>Gestora de Private Equity e Venture Capital de estágio avançado (Growth), referência em investimentos de teses de consumo, serviços e tecnologia de alta escala.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.211656,-22.9853182,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Empresas/Startups</name>
+      <Placemark>
+        <name><![CDATA[L'Oréal Brasil]]></name>
+        <description>Grupo número 1 de Beleza do mundo com 22 marcas no Brasil e, desde 1959 no País, temos o compromisso de representar toda a diversidade brasileira, seja dentro e fora da Companhia.No Brasil, mais de 3 mil pessoas inovando em produtos e serviços que atendam à infinita diversidade do país. Utiliza 100% de energia renovável em todas as unidades no Brasil. E, através do Fundo L’Oréal para a Regeneração da Natureza, contribuempara restaurar as florestas brasileiras. Quarto maior mercado de beleza do mundo, o Brasil é um país estratégico para o Grupo L’Oréal. Combinamos um modelo único de negócios, alinhado à valorização da inovação e da diversidade brasileira, por meio de uma forte conexão com a cultura do país. A brasilidade é o nosso motor e fonte de inspiração para criarmos uma beleza mais inclusiva, responsável e pautada na tecnologia, e a representatividade é o nosso ponto de partida para inovação. </description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1864138,-22.895506,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>BigDataCorp</name>
+        <description>A BigDataCorp é uma das maiores plataformas de dados da América Latina, utilizando a Inteligência Artificial como seu diferencial competitivo central para transformar o imenso volume de informações não estruturadas da web em insights de negócios acionáveis. Através de algoritmos avançados de Aprendizado de Máquina (Machine Learning/Deep Learning) e Processamento de Linguagem Natural (NLP), a entidade automatiza a coleta e a validação de dados para processos de KYC (Know Your Customer), prevenção a fraudes e análise de mercado em tempo real. No Rio de Janeiro, a BigDataCorp se destaca por sua infraestrutura proprietária que emprega Visão Computacional para reconhecimento de documentos e biometria, consolidando-se como um provedor essencial de inteligência de dados para o setor financeiro e de varejo em escala global.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.3202971,-23.002125,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fu2re Smart Solutions</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1802163,-22.8974191,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>IBM Brasil</name>
+        <description>A IBM é a parceira tecnológica que ajudou a colocar o Rio de Janeiro no mapa mundial das cidades inteligentes. Através de sua divisão de consultoria e tecnologias de Inteligência Artificial (Watson) e Cloud, a companhia foi a peça-chave na concepção e implementação do Centro de Operações e Resiliência (COR) em 2010. O modelo de integração de dados que o Rio utiliza hoje ,transformando crises urbanas em respostas coordenadas, foi desenhado sobre a expertise de Big Data da IBM, criando um legado de resiliência que a cidade opera de forma independente e evoluída até hoje. A IBM provê a base tecnológica para grandes corporações sediadas no Rio, especialmente nos setores de Finanças, Óleo e Gás, permitindo a modernização de sistemas legados para ambientes de nuvem híbrida. : Através de programas de parcerias, a IBM conecta startups do Porto Maravalley e da Gênesis (PUC-Rio) às suas plataformas de desenvolvimento, acelerando a criação de soluções locais com tecnologia de padrão global.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1815606,-22.909004,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>DobraTech</name>
+        <description><![CDATA["Conectar o conhecimento científico com as necessidades da sociedade, inspirando inovação e impactando positivamente o ambiente ao nosso redor.<br>Integramos a universidade à sociedade a partir de estudos realizados por nós em parceria com laboratórios de pesquisa e cientistas, educamos pesquisadores com skills do mercado, comunicamos nossos conhecimentos e reflexões para a sociedade e ajudamos a pautar a opinião pública sobre a relação entre inovação e pesquisa acadêmica. Com empresas<br>Ajudamos instituições públicas e privadas de todos os tamanhos e segmentos a integrarem e disseminarem a mentalidade científica aos seus negócios e a reforçarem sua autoridade produzindo conhecimento autoral para a sociedade.<br>Com pesquisadores<br>Formamos pesquisadores acadêmicos com skills importantes para o mercado e para comunicação científica com o objetivo de facilitar a inserção de cientistas em instituições públicas e privadas, além de ajudar a traduzir dados e conceitos científicos complexos em informações acessíveis.<br>Com a sociedade<br>Divulgamos amplamente nossos estudos públicos para aproximar ciência e sociedade, produzimos conteúdo em formatos e linguagens acessíveis, compartilhamos insights e nos posicionamos como fonte de informação para a imprensa a fim de ajudar a pautar a opinião pública sobre o valor da ciência para a economia brasileira.<br>Com a imprensa<br>Compartilhamos dados sobre a relação entre mercado e ciência, mediamos a relação entre imprensa e cientistas e ajudamos a encontrar fontes confiáveis de conhecimento. Contamos com a imprensa para ampliar nosso poder de distribuição de conhecimento científico e de integração entre ciência e sociedade."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2037036,-22.897847,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grupo Cataratas</name>
+        <description>O Grupo Cataratas é responsável pela gestão de atrativos na área de turismo sustentável do Brasil desde 1999. Os serviços voltados ao ecoturismo reúnem hoje os parques Aquario,Bioparque do Rio, Paineiras Corcovado,Econoronha,Cataratas do Iguaçu,Marco das 3 Fronteiras e Aquafoz que contam com mais de 6 Milhões Visitantes por ano e mais de 50 participações em publicações científicas. Três vezes eleita a companhia mais sustentável na área de Turismo e Hotelaria no Brasil </description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.2289773,-22.9043309,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>PD7 Tech</name>
+        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1850274,-22.9145907,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Petrobras - EDISEN</name>
+        <description><![CDATA["Sediada no Rio, a Petrobras é a âncora da economia e da inovação fluminense. Através do CENPES (Centro de Pesquisas da Petrobras), localizado na Ilha do Fundão, a companhia opera um dos maiores complexos de tecnologia aplicada do mundo. A Petrobras não apenas extrai petróleo; ela desenvolve tecnologia de fronteira em Computação de Alto Desempenho (HPC), Robótica Submarina e Transição Energética, sendo o principal cliente e parceiro de inovação das startups e institutos de pesquisa cariocas. A Petrobras possui os computadores mais potentes da América Latina no Rio de Janeiro. Essa infraestrutura de processamento massivo de dados impulsiona o desenvolvimento de IA e geociências em escala global.<br>Por lei, a Petrobras destina uma porcentagem de sua receita bruta para pesquisa e desenvolvimento. Esse recurso é a principal fonte de financiamento para laboratórios da UFRJ e PUC-Rio, mantendo o Rio no topo da produção científica.<br> Através de editais de inovação aberta, a Petrobras integra soluções de pequenas empresas de tecnologia ao seu fluxo operacional, servindo como o ""cliente âncora"" que valida e escala novos negócios no estado."]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1858644,-22.9104896,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>BIP Brasil</name>
+        <description>A trajetória da BIP Consulting no Rio de Janeiro é marcada por um impacto profundo na modernização das grandes indústrias fluminenses, atuando historicamente na eficiência operacional e na transformação digital de setores pilares como Óleo e Gás, Energia e Telecomunicações. Antes de se consolidar como peça-chave do ecossistema de tecnologia, a consultoria construiu sua relevância entregando resultados tangíveis em governança e otimização de processos complexos, o que lhe conferiu a autoridade necessária para liderar movimentos de ruptura. Atualmente, esse impacto se expande ao posicionar a BIP como uma articuladora vital no Porto Maravalley e na Aliança pela Inovação, onde ela utiliza seu know-how estratégico para integrar grandes corporações ao ecossistema de startups. Ao unir sua sólida experiência de mercado com o dinamismo do Maravalley, a BIP acelera a conversão do Rio de Janeiro em um hub global de inovação, provando que sua influência vai além do aconselhamento, sendo uma força prática que molda a nova economia digital da cidade.</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            -43.1778736,-22.9053085,0
           </coordinates>
         </Point>
       </Placemark>
